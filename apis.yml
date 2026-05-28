@@ -1,0 +1,32 @@
+aid: anilist
+name: AniList
+description: "Anime discovery & tracking"
+url: https://github.com/AniList/ApiV2-GraphQL-Docs
+specificationVersion: '0.20'
+created: '2026-05-28'
+modified: '2026-05-28'
+x-source: public-apis/public-apis
+x-category: "Anime"
+x-tier: 3
+x-tier-reason: bulk-registered-from-public-apis
+tags:
+  - Anime
+  - Public APIs
+apis:
+  - name: AniList
+    description: "Anime discovery & tracking"
+    humanURL: https://github.com/AniList/ApiV2-GraphQL-Docs
+    baseURL: https://github.com/AniList/ApiV2-GraphQL-Docs
+    tags:
+      - Anime
+    properties:
+      - type: Documentation
+        url: https://github.com/AniList/ApiV2-GraphQL-Docs
+common:
+  - type: Website
+    url: https://github.com/AniList/ApiV2-GraphQL-Docs
+  - type: PublicAPIsListing
+    url: https://github.com/public-apis/public-apis
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
