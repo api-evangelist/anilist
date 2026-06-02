@@ -1,0 +1,7 @@
+{
+  "grant_type": "authorization_code",
+  "client_id": "00000000-0000-0000-0000-000000000000",
+  "client_secret": "00000000-0000-0000-0000-000000000000",
+  "redirect_uri": "https://anilist.co/anime/1",
+  "code": "abc123codedef456"
+}

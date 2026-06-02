@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-graphqlrequest-structure.json",
+  "name": "GraphQLRequest",
+  "description": "GraphQLRequest schema from AniList GraphQL API v2",
+  "type": "object",
+  "properties": {
+    "query": {
+      "type": "string",
+      "description": "GraphQL query or mutation document",
+      "example": "query { Viewer { id name } }"
+    },
+    "variables": {
+      "type": "object",
+      "description": "Map of variable values referenced in the query",
+      "additionalProperties": true
+    },
+    "operationName": {
+      "type": "string",
+      "description": "Name of the operation to execute when the document contains multiple"
+    }
+  },
+  "required": [
+    "query"
+  ]
+}

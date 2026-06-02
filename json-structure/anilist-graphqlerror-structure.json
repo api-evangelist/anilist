@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-graphqlerror-structure.json",
+  "name": "GraphQLError",
+  "description": "GraphQLError schema from AniList GraphQL API v2",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string",
+      "example": "Too Many Requests."
+    },
+    "status": {
+      "type": "int32",
+      "example": 429
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "line": {
+            "type": "int32"
+          },
+          "column": {
+            "type": "int32"
+          }
+        }
+      }
+    },
+    "path": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          }
+        ]
+      }
+    }
+  }
+}

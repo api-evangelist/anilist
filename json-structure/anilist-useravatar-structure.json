@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-useravatar-structure.json",
+  "name": "UserAvatar",
+  "description": "A user's avatars",
+  "type": "object",
+  "properties": {
+    "large": {
+      "type": "string",
+      "description": "The avatar of user at its largest size"
+    },
+    "medium": {
+      "type": "string",
+      "description": "The avatar of user at medium size"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "query": "query { Viewer { id name } }",
+  "variables": {},
+  "operationName": "Sample Name"
+}

@@ -1,0 +1,14 @@
+{
+  "first": "string",
+  "middle": "string",
+  "last": "string",
+  "full": "string",
+  "native": "カウボーイビバップ",
+  "alternative": [
+    "カウボーイビバップ"
+  ],
+  "alternativeSpoiler": [
+    "カウボーイビバップ"
+  ],
+  "userPreferred": "string"
+}

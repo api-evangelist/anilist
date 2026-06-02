@@ -1,0 +1,16 @@
+{
+  "titleLanguage": "ROMAJI",
+  "displayAdultContent": false,
+  "airingNotifications": false,
+  "profileColor": "#3DB4F2",
+  "notificationOptions": [
+    {}
+  ],
+  "timezone": "string",
+  "activityMergeTime": 1748563200,
+  "staffNameLanguage": "ROMAJI_WESTERN",
+  "restrictMessagesToFollowing": false,
+  "disabledListActivity": [
+    {}
+  ]
+}

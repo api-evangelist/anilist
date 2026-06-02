@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-schema/anilist-staffimage-schema.json",
+  "title": "StaffImage",
+  "description": "StaffImage schema from AniList GraphQL API v2",
+  "type": "object",
+  "properties": {
+    "large": {
+      "type": "string",
+      "description": "The person's image of media at its largest size"
+    },
+    "medium": {
+      "type": "string",
+      "description": "The person's image of media at medium size"
+    }
+  }
+}

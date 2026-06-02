@@ -1,0 +1,11 @@
+{
+  "first": "string",
+  "middle": "string",
+  "last": "string",
+  "full": "string",
+  "native": "カウボーイビバップ",
+  "alternative": [
+    "カウボーイビバップ"
+  ],
+  "userPreferred": "string"
+}

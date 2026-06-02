@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-schema/anilist-useravatar-schema.json",
+  "title": "UserAvatar",
+  "description": "A user's avatars",
+  "type": "object",
+  "properties": {
+    "large": {
+      "type": "string",
+      "description": "The avatar of user at its largest size"
+    },
+    "medium": {
+      "type": "string",
+      "description": "The avatar of user at medium size"
+    }
+  }
+}

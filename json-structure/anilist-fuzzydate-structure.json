@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-fuzzydate-structure.json",
+  "name": "FuzzyDate",
+  "description": "Date object that allows for incomplete date values (fuzzy)",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "int32",
+      "description": "Numeric Year (2017)"
+    },
+    "month": {
+      "type": "int32",
+      "description": "Numeric Month (3)"
+    },
+    "day": {
+      "type": "int32",
+      "description": "Numeric Day (24)"
+    }
+  }
+}

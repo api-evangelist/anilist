@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-schema/anilist-staff-schema.json",
+  "title": "Staff",
+  "description": "Voice actors or production staff",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "The id of the staff member"
+    },
+    "name": {
+      "$ref": "./anilist-staffname-schema.json",
+      "description": "The names of the staff member"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "JAPANESE",
+        "ENGLISH",
+        "KOREAN",
+        "ITALIAN",
+        "SPANISH",
+        "PORTUGUESE",
+        "FRENCH",
+        "GERMAN",
+        "HEBREW",
+        "HUNGARIAN"
+      ],
+      "description": "The primary language the staff member dub's in",
+      "deprecated": true
+    },
+    "languageV2": {
+      "type": "string",
+      "description": "The primary language of the staff member. Current values: Japanese, English, Korean, Italian, Spanish, Portuguese, French, German, Hebrew, Hungarian, Chinese, Arabic, Filipino, Catalan, Finnish, Turkish, Dutch, Swedish, Thai, Tagalog, Malaysian, Indonesian, Vietnamese, Nepali, Hindi, Urdu"
+    },
+    "image": {
+      "$ref": "./anilist-staffimage-schema.json",
+      "description": "The staff images"
+    },
+    "description": {
+      "type": "string",
+      "description": "A general description of the staff member"
+    },
+    "primaryOccupations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The person's primary occupations"
+    },
+    "gender": {
+      "type": "string",
+      "description": "The staff's gender. Usually Male, Female, or Non-binary but can be any string."
+    },
+    "dateOfBirth": {
+      "$ref": "./anilist-fuzzydate-schema.json"
+    },
+    "dateOfDeath": {
+      "$ref": "./anilist-fuzzydate-schema.json"
+    },
+    "age": {
+      "type": "integer",
+      "description": "The person's age in years"
+    },
+    "yearsActive": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "[startYear, endYear] (If the 2nd value is not present staff is still active)"
+    },
+    "homeTown": {
+      "type": "string",
+      "description": "The persons birthplace or hometown"
+    },
+    "bloodType": {
+      "type": "string",
+      "description": "The persons blood type"
+    },
+    "isFavourite": {
+      "type": "boolean",
+      "description": "If the staff member is marked as favourite by the currently authenticated user"
+    },
+    "isFavouriteBlocked": {
+      "type": "boolean",
+      "description": "If the staff member is blocked from being added to favourites"
+    },
+    "siteUrl": {
+      "type": "string",
+      "description": "The url for the staff page on the AniList website"
+    },
+    "staffMedia": {
+      "$ref": "./anilist-mediaconnection-schema.json",
+      "description": "Media where the staff member has a production role"
+    },
+    "characters": {
+      "$ref": "./anilist-characterconnection-schema.json",
+      "description": "Characters voiced by the actor"
+    },
+    "characterMedia": {
+      "$ref": "./anilist-mediaconnection-schema.json",
+      "description": "Media the actor voiced characters in. (Same data as characters with media as node instead of characters)"
+    },
+    "updatedAt": {
+      "type": "integer",
+      "deprecated": true
+    },
+    "staff": {
+      "$ref": "./anilist-staff-schema.json",
+      "description": "Staff member that the submission is referencing"
+    },
+    "submitter": {
+      "$ref": "./anilist-user-schema.json",
+      "description": "Submitter for the submission"
+    },
+    "submissionStatus": {
+      "type": "integer",
+      "description": "Status of the submission"
+    },
+    "submissionNotes": {
+      "type": "string",
+      "description": "Inner details of submission status"
+    },
+    "favourites": {
+      "type": "integer",
+      "description": "The amount of user's who have favourited the staff member"
+    },
+    "modNotes": {
+      "type": "string",
+      "description": "Notes for site moderators"
+    }
+  },
+  "required": [
+    "id",
+    "isFavourite",
+    "isFavouriteBlocked"
+  ]
+}

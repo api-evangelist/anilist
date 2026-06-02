@@ -1,0 +1,159 @@
+{
+  "id": 1,
+  "userId": 1,
+  "threadId": 1,
+  "comment": "string",
+  "likeCount": 1,
+  "isLiked": false,
+  "siteUrl": "https://anilist.co/anime/1",
+  "createdAt": 1748563200,
+  "updatedAt": 1748563200,
+  "thread": {
+    "id": 1,
+    "title": "Cowboy Bebop",
+    "body": "string",
+    "userId": 1,
+    "replyUserId": 1,
+    "replyCommentId": 1,
+    "replyCount": 1,
+    "viewCount": 1,
+    "isLocked": false,
+    "isSticky": false,
+    "isSubscribed": false,
+    "likeCount": 1,
+    "isLiked": false,
+    "repliedAt": 1748563200,
+    "createdAt": 1748563200,
+    "updatedAt": 1748563200,
+    "user": {
+      "id": 1,
+      "name": "Sample Name",
+      "about": "string",
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/example.jpg",
+      "isFollowing": false,
+      "isFollower": false,
+      "isBlocked": false,
+      "bans": {},
+      "unreadNotificationCount": 1,
+      "siteUrl": "https://anilist.co/anime/1",
+      "donatorTier": 1,
+      "donatorBadge": "string",
+      "moderatorRoles": [
+        "ADMIN"
+      ],
+      "createdAt": 1748563200,
+      "updatedAt": 1748563200,
+      "moderatorStatus": "string",
+      "previousNames": [
+        {}
+      ]
+    },
+    "replyUser": {
+      "id": 1,
+      "name": "Sample Name",
+      "about": "string",
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/example.jpg",
+      "isFollowing": false,
+      "isFollower": false,
+      "isBlocked": false,
+      "bans": {},
+      "unreadNotificationCount": 1,
+      "siteUrl": "https://anilist.co/anime/1",
+      "donatorTier": 1,
+      "donatorBadge": "string",
+      "moderatorRoles": [
+        "ADMIN"
+      ],
+      "createdAt": 1748563200,
+      "updatedAt": 1748563200,
+      "moderatorStatus": "string",
+      "previousNames": [
+        {}
+      ]
+    },
+    "likes": [
+      {}
+    ],
+    "siteUrl": "https://anilist.co/anime/1",
+    "categories": [
+      {}
+    ],
+    "mediaCategories": [
+      {}
+    ]
+  },
+  "user": {
+    "id": 1,
+    "name": "Sample Name",
+    "about": "string",
+    "avatar": {
+      "large": "string",
+      "medium": "string"
+    },
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/example.jpg",
+    "isFollowing": false,
+    "isFollower": false,
+    "isBlocked": false,
+    "bans": {},
+    "options": {
+      "titleLanguage": "ROMAJI",
+      "displayAdultContent": false,
+      "airingNotifications": false,
+      "profileColor": "#3DB4F2",
+      "notificationOptions": [
+        {}
+      ],
+      "timezone": "string",
+      "activityMergeTime": 1748563200,
+      "staffNameLanguage": "ROMAJI_WESTERN",
+      "restrictMessagesToFollowing": false,
+      "disabledListActivity": [
+        {}
+      ]
+    },
+    "mediaListOptions": {},
+    "favourites": {},
+    "statistics": {},
+    "unreadNotificationCount": 1,
+    "siteUrl": "https://anilist.co/anime/1",
+    "donatorTier": 1,
+    "donatorBadge": "string",
+    "moderatorRoles": [
+      "ADMIN"
+    ],
+    "createdAt": 1748563200,
+    "updatedAt": 1748563200,
+    "stats": {},
+    "moderatorStatus": "string",
+    "previousNames": [
+      {}
+    ]
+  },
+  "likes": [
+    {
+      "id": 1,
+      "name": "Sample Name",
+      "about": "string",
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/example.jpg",
+      "isFollowing": false,
+      "isFollower": false,
+      "isBlocked": false,
+      "bans": {},
+      "unreadNotificationCount": 1,
+      "siteUrl": "https://anilist.co/anime/1",
+      "donatorTier": 1,
+      "donatorBadge": "string",
+      "moderatorRoles": [
+        "ADMIN"
+      ],
+      "createdAt": 1748563200,
+      "updatedAt": 1748563200,
+      "moderatorStatus": "string",
+      "previousNames": [
+        {}
+      ]
+    }
+  ],
+  "childComments": {},
+  "isLocked": false
+}

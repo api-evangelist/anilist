@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-schema/anilist-tokenrequest-schema.json",
+  "title": "TokenRequest",
+  "description": "TokenRequest schema from AniList GraphQL API v2",
+  "type": "object",
+  "properties": {
+    "grant_type": {
+      "type": "string",
+      "enum": [
+        "authorization_code"
+      ],
+      "example": "authorization_code"
+    },
+    "client_id": {
+      "type": "string"
+    },
+    "client_secret": {
+      "type": "string"
+    },
+    "redirect_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "code": {
+      "type": "string",
+      "description": "Authorization code received from the redirect"
+    }
+  },
+  "required": [
+    "grant_type",
+    "client_id",
+    "client_secret",
+    "redirect_uri",
+    "code"
+  ]
+}

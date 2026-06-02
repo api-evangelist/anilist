@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-recommendation-structure.json",
+  "name": "Recommendation",
+  "description": "Media recommendation",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "int32",
+      "description": "The id of the recommendation"
+    },
+    "rating": {
+      "type": "int32",
+      "description": "Users rating of the recommendation"
+    },
+    "userRating": {
+      "type": "string",
+      "description": "The rating of the recommendation by currently authenticated user",
+      "enum": [
+        "NO_RATING",
+        "RATE_UP",
+        "RATE_DOWN"
+      ]
+    },
+    "media": {
+      "description": "The media the recommendation is from",
+      "$ref": "./anilist-media-structure.json"
+    },
+    "mediaRecommendation": {
+      "description": "The recommended media",
+      "$ref": "./anilist-media-structure.json"
+    },
+    "user": {
+      "description": "The user that first created the recommendation",
+      "$ref": "./anilist-user-structure.json"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

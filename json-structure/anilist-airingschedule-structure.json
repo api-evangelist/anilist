@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-airingschedule-structure.json",
+  "name": "AiringSchedule",
+  "description": "Media Airing Schedule. NOTE: We only aim to guarantee that FUTURE airing data is present and accurate.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "int32",
+      "description": "The id of the airing schedule item"
+    },
+    "airingAt": {
+      "type": "int32",
+      "description": "The time the episode airs at"
+    },
+    "timeUntilAiring": {
+      "type": "int32",
+      "description": "Seconds until episode starts airing"
+    },
+    "episode": {
+      "type": "int32",
+      "description": "The airing episode number"
+    },
+    "mediaId": {
+      "type": "int32",
+      "description": "The associate media id of the airing episode"
+    },
+    "media": {
+      "description": "The associate media of the airing episode",
+      "$ref": "./anilist-media-structure.json"
+    }
+  },
+  "required": [
+    "id",
+    "airingAt",
+    "timeUntilAiring",
+    "episode",
+    "mediaId"
+  ]
+}

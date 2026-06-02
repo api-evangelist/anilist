@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-medialistcollection-structure.json",
+  "name": "MediaListCollection",
+  "description": "List of anime or manga",
+  "type": "object",
+  "properties": {
+    "lists": {
+      "type": "array",
+      "description": "Grouped media list entries",
+      "items": {
+        "$ref": "./anilist-medialistgroup-structure.json"
+      }
+    },
+    "user": {
+      "description": "The owner of the list",
+      "$ref": "./anilist-user-structure.json"
+    },
+    "hasNextChunk": {
+      "type": "boolean",
+      "description": "If there is another chunk"
+    },
+    "statusLists": {
+      "type": "array",
+      "description": "A map of media list entry arrays grouped by status",
+      "deprecated": true,
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "./anilist-medialist-structure.json"
+        }
+      }
+    },
+    "customLists": {
+      "type": "array",
+      "description": "A map of media list entry arrays grouped by custom lists",
+      "deprecated": true,
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "./anilist-medialist-structure.json"
+        }
+      }
+    }
+  }
+}

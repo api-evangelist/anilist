@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-tokenresponse-structure.json",
+  "name": "TokenResponse",
+  "description": "TokenResponse schema from AniList GraphQL API v2",
+  "type": "object",
+  "properties": {
+    "token_type": {
+      "type": "string",
+      "example": "Bearer"
+    },
+    "expires_in": {
+      "type": "int32",
+      "description": "Token lifetime in seconds (1 year)",
+      "example": 31536000
+    },
+    "access_token": {
+      "type": "string",
+      "description": "JWT access token"
+    },
+    "refresh_token": {
+      "type": "string",
+      "description": "AniList does not currently support refresh tokens",
+      "nullable": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-graphqlresponse-structure.json",
+  "name": "GraphQLResponse",
+  "description": "GraphQLResponse schema from AniList GraphQL API v2",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "description": "Selection result tree shaped like the requested query",
+      "additionalProperties": true,
+      "nullable": true
+    },
+    "errors": {
+      "type": "array",
+      "description": "Array of GraphQL errors when the request was not fully successful",
+      "items": {
+        "$ref": "#/components/schemas/GraphQLError"
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

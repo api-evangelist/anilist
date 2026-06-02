@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-schema/anilist-studio-schema.json",
+  "title": "Studio",
+  "description": "Animation or production company",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "The id of the studio"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the studio"
+    },
+    "isAnimationStudio": {
+      "type": "boolean",
+      "description": "If the studio is an animation studio or a different kind of company"
+    },
+    "media": {
+      "$ref": "./anilist-mediaconnection-schema.json",
+      "description": "The media the studio has worked on"
+    },
+    "siteUrl": {
+      "type": "string",
+      "description": "The url for the studio page on the AniList website"
+    },
+    "isFavourite": {
+      "type": "boolean",
+      "description": "If the studio is marked as favourite by the currently authenticated user"
+    },
+    "favourites": {
+      "type": "integer",
+      "description": "The amount of user's who have favourited the studio"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "isAnimationStudio",
+    "isFavourite"
+  ]
+}

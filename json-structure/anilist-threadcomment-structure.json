@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-threadcomment-structure.json",
+  "name": "ThreadComment",
+  "description": "Forum Thread Comment",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "int32",
+      "description": "The id of the comment"
+    },
+    "userId": {
+      "type": "int32",
+      "description": "The user id of the comment's owner"
+    },
+    "threadId": {
+      "type": "int32",
+      "description": "The id of thread the comment belongs to"
+    },
+    "comment": {
+      "type": "string",
+      "description": "The text content of the comment (Markdown)"
+    },
+    "likeCount": {
+      "type": "int32",
+      "description": "The amount of likes the comment has"
+    },
+    "isLiked": {
+      "type": "boolean",
+      "description": "If the currently authenticated user liked the comment"
+    },
+    "siteUrl": {
+      "type": "string",
+      "description": "The url for the comment page on the AniList website"
+    },
+    "createdAt": {
+      "type": "int32",
+      "description": "The time of the comments creation"
+    },
+    "updatedAt": {
+      "type": "int32",
+      "description": "The time of the comments last update"
+    },
+    "thread": {
+      "description": "The thread the comment belongs to",
+      "$ref": "./anilist-thread-structure.json"
+    },
+    "user": {
+      "description": "The user who created the comment",
+      "$ref": "./anilist-user-structure.json"
+    },
+    "likes": {
+      "type": "array",
+      "description": "The users who liked the comment",
+      "items": {
+        "$ref": "./anilist-user-structure.json"
+      }
+    },
+    "childComments": {
+      "type": "object",
+      "description": "The comment's child reply comments"
+    },
+    "isLocked": {
+      "type": "boolean",
+      "description": "If the comment tree is locked and may not receive replies or edits"
+    }
+  },
+  "required": [
+    "id",
+    "likeCount",
+    "createdAt",
+    "updatedAt"
+  ]
+}

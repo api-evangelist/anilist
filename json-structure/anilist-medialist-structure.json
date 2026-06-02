@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-medialist-structure.json",
+  "name": "MediaList",
+  "description": "List of anime or manga",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "int32",
+      "description": "The id of the list entry"
+    },
+    "userId": {
+      "type": "int32",
+      "description": "The id of the user owner of the list entry"
+    },
+    "mediaId": {
+      "type": "int32",
+      "description": "The id of the media"
+    },
+    "status": {
+      "type": "string",
+      "description": "The watching/reading status",
+      "enum": [
+        "CURRENT",
+        "PLANNING",
+        "COMPLETED",
+        "DROPPED",
+        "PAUSED",
+        "REPEATING"
+      ]
+    },
+    "score": {
+      "type": "double",
+      "description": "The score of the entry"
+    },
+    "progress": {
+      "type": "int32",
+      "description": "The amount of episodes/chapters consumed by the user"
+    },
+    "progressVolumes": {
+      "type": "int32",
+      "description": "The amount of volumes read by the user"
+    },
+    "repeat": {
+      "type": "int32",
+      "description": "The amount of times the user has rewatched/read the media"
+    },
+    "priority": {
+      "type": "int32",
+      "description": "Priority of planning"
+    },
+    "private": {
+      "type": "boolean",
+      "description": "If the entry should only be visible to authenticated user"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Text notes"
+    },
+    "hiddenFromStatusLists": {
+      "type": "boolean",
+      "description": "If the entry shown be hidden from non-custom lists"
+    },
+    "customLists": {
+      "type": "object",
+      "description": "Map of booleans for which custom lists the entry are in"
+    },
+    "advancedScores": {
+      "type": "object",
+      "description": "Map of advanced scores with name keys"
+    },
+    "startedAt": {
+      "description": "When the entry was started by the user",
+      "$ref": "./anilist-fuzzydate-structure.json"
+    },
+    "completedAt": {
+      "description": "When the entry was completed by the user",
+      "$ref": "./anilist-fuzzydate-structure.json"
+    },
+    "updatedAt": {
+      "type": "int32",
+      "description": "When the entry data was last updated"
+    },
+    "createdAt": {
+      "type": "int32",
+      "description": "When the entry data was created"
+    },
+    "media": {
+      "$ref": "./anilist-media-structure.json"
+    },
+    "user": {
+      "$ref": "./anilist-user-structure.json"
+    }
+  },
+  "required": [
+    "id",
+    "userId",
+    "mediaId"
+  ]
+}

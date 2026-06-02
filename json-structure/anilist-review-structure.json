@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-review-structure.json",
+  "name": "Review",
+  "description": "A Review that features in an anime or manga",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "int32",
+      "description": "The id of the review"
+    },
+    "userId": {
+      "type": "int32",
+      "description": "The id of the review's creator"
+    },
+    "mediaId": {
+      "type": "int32",
+      "description": "The id of the review's media"
+    },
+    "mediaType": {
+      "type": "string",
+      "description": "For which type of media the review is for",
+      "enum": [
+        "ANIME",
+        "MANGA"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "description": "A short summary of the review"
+    },
+    "body": {
+      "type": "string",
+      "description": "The main review body text"
+    },
+    "rating": {
+      "type": "int32",
+      "description": "The total user rating of the review"
+    },
+    "ratingAmount": {
+      "type": "int32",
+      "description": "The amount of user ratings of the review"
+    },
+    "userRating": {
+      "type": "string",
+      "description": "The rating of the review by currently authenticated user",
+      "enum": [
+        "NO_VOTE",
+        "UP_VOTE",
+        "DOWN_VOTE"
+      ]
+    },
+    "score": {
+      "type": "int32",
+      "description": "The review score of the media"
+    },
+    "private": {
+      "type": "boolean",
+      "description": "If the review is not yet publicly published and is only viewable by creator"
+    },
+    "siteUrl": {
+      "type": "string",
+      "description": "The url for the review page on the AniList website"
+    },
+    "createdAt": {
+      "type": "int32",
+      "description": "The time of the thread creation"
+    },
+    "updatedAt": {
+      "type": "int32",
+      "description": "The time of the thread last update"
+    },
+    "user": {
+      "description": "The creator of the review",
+      "$ref": "./anilist-user-structure.json"
+    },
+    "media": {
+      "description": "The media the review is of",
+      "$ref": "./anilist-media-structure.json"
+    }
+  },
+  "required": [
+    "id",
+    "userId",
+    "mediaId",
+    "createdAt",
+    "updatedAt"
+  ]
+}

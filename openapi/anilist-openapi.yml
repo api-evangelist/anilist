@@ -1,0 +1,387 @@
+openapi: 3.0.3
+info:
+  title: AniList GraphQL API v2
+  version: "2.0.0"
+  description: >-
+    HTTP surface of the AniList API v2. The primary developer interface is a
+    single GraphQL endpoint at https://graphql.anilist.co. OAuth2
+    authentication uses the Authorization Code and Implicit grant flows at
+    https://anilist.co. This OpenAPI document captures the HTTP layer: the
+    GraphQL POST endpoint, the OAuth2 authorize endpoint, the token exchange
+    endpoint, and the auth pin redirect. The full GraphQL schema is profiled
+    separately in `graphql/anilist-schema.graphql` (SDL) and
+    `graphql/anilist-introspection.json` (introspection).
+  termsOfService: https://docs.anilist.co/guide/terms-of-use
+  contact:
+    name: AniList Support
+    email: contact@anilist.co
+    url: https://docs.anilist.co/
+  license:
+    name: AniList Terms of Use (free for non-commercial / commercial < $150/mo)
+    url: https://docs.anilist.co/guide/terms-of-use
+  x-generated-from: documentation
+  x-last-validated: "2026-05-30"
+  x-api-evangelist-profile: https://github.com/api-evangelist/anilist
+servers:
+  - url: https://graphql.anilist.co
+    description: AniList GraphQL endpoint (v2)
+  - url: https://anilist.co
+    description: AniList OAuth2 authorization server
+tags:
+  - name: GraphQL
+    description: GraphQL query and mutation endpoint
+  - name: OAuth2
+    description: OAuth2 authorization code and implicit grant endpoints
+paths:
+  /:
+    post:
+      operationId: executeGraphQL
+      summary: Execute a GraphQL query or mutation
+      description: >-
+        Execute a GraphQL query or mutation against the AniList schema. The
+        request body must include a `query` string and may include a
+        `variables` object and an `operationName`. Queries may be made
+        anonymously; mutations require a Bearer access token obtained via
+        OAuth2.
+      tags:
+        - GraphQL
+      servers:
+        - url: https://graphql.anilist.co
+      security:
+        - {}
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GraphQLRequest'
+            examples:
+              mediaById:
+                summary: Fetch a Media by ID
+                value:
+                  query: |
+                    query ($id: Int) { Media(id: $id) { id title { romaji english native } episodes status } }
+                  variables:
+                    id: 15125
+              searchMedia:
+                summary: Search media by title
+                value:
+                  query: |
+                    query ($search: String, $page: Int, $perPage: Int) {
+                      Page(page: $page, perPage: $perPage) {
+                        pageInfo { currentPage lastPage hasNextPage total }
+                        media(search: $search, type: ANIME) { id title { romaji english } averageScore }
+                      }
+                    }
+                  variables:
+                    search: Cowboy Bebop
+                    page: 1
+                    perPage: 10
+      responses:
+        '200':
+          description: A successful GraphQL response (may still contain an `errors` array)
+          headers:
+            X-RateLimit-Limit:
+              description: Per-IP/user request budget per minute (90, currently degraded to 30)
+              schema:
+                type: integer
+            X-RateLimit-Remaining:
+              description: Remaining requests in the current rate-limit window
+              schema:
+                type: integer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphQLResponse'
+              examples:
+                ExecuteGraphQL200Example:
+                  summary: Default executeGraphQL 200 response
+                  x-microcks-default: true
+                  value:
+                    data:
+                      Media:
+                        id: 15125
+                        title:
+                          romaji: Teekyuu
+                          english: Teekyuu
+                          native: "てーきゅう"
+                        episodes: 12
+                        status: FINISHED
+        '400':
+          description: Malformed GraphQL document
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphQLResponse'
+        '401':
+          description: Missing or invalid access token for a mutation requiring auth
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphQLResponse'
+        '403':
+          description: API temporarily disabled or IP blocked
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphQLResponse'
+        '429':
+          description: Rate limit exceeded; one-minute timeout applied
+          headers:
+            Retry-After:
+              description: Seconds to wait before retrying
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: Unix timestamp of next allowed request
+              schema:
+                type: integer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphQLResponse'
+              examples:
+                ExecuteGraphQL429Example:
+                  summary: Default executeGraphQL 429 response
+                  x-microcks-default: true
+                  value:
+                    data: null
+                    errors:
+                      - message: Too Many Requests.
+                        status: 429
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /api/v2/oauth/authorize:
+    get:
+      operationId: oauthAuthorize
+      summary: Begin the OAuth2 authorization flow
+      description: >-
+        Redirect a user to this endpoint to begin the OAuth2 Authorization
+        Code or Implicit grant flow. The redirect URI must exactly match the
+        URI configured on the developer application.
+      tags:
+        - OAuth2
+      servers:
+        - url: https://anilist.co
+      parameters:
+        - name: client_id
+          in: query
+          required: true
+          description: The client ID of the developer application
+          schema:
+            type: string
+        - name: redirect_uri
+          in: query
+          required: true
+          description: Registered redirect URI for the application
+          schema:
+            type: string
+            format: uri
+        - name: response_type
+          in: query
+          required: true
+          description: '`code` for Authorization Code Grant, `token` for Implicit Grant'
+          schema:
+            type: string
+            enum: [code, token]
+        - name: state
+          in: query
+          required: false
+          description: Opaque value the client can use to maintain state between request and callback
+          schema:
+            type: string
+      responses:
+        '302':
+          description: Redirects to the configured redirect_uri with `code` (Authorization Code) or `#access_token` fragment (Implicit)
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /api/v2/oauth/token:
+    post:
+      operationId: oauthExchangeToken
+      summary: Exchange an authorization code for an access token
+      description: >-
+        Exchange an authorization code obtained from the authorize endpoint
+        for an OAuth2 access token. AniList access tokens are JWTs valid for
+        one year; refresh tokens are not supported.
+      tags:
+        - OAuth2
+      servers:
+        - url: https://anilist.co
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRequest'
+      responses:
+        '200':
+          description: Token successfully issued
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+        '400':
+          description: Invalid grant, client credentials, or redirect URI
+        '401':
+          description: Invalid client credentials
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /api/v2/oauth/pin:
+    get:
+      operationId: oauthAuthPin
+      summary: Display the OAuth2 auth pin for manual entry
+      description: >-
+        Auth Pin redirect that displays an access token on a page for the
+        user to copy and paste into a client application. Useful for clients
+        that cannot register an HTTP or custom URI scheme redirect. Supports
+        both Authorization Code and Implicit flows.
+      tags:
+        - OAuth2
+      servers:
+        - url: https://anilist.co
+      responses:
+        '200':
+          description: HTML page displaying the access token
+          content:
+            text/html:
+              schema:
+                type: string
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OAuth2 access token issued by AniList. No scopes; access tokens grant (almost) full access to a user's data. Tokens are valid for one year.
+    oauth2:
+      type: oauth2
+      description: AniList OAuth2 (no scopes supported)
+      flows:
+        authorizationCode:
+          authorizationUrl: https://anilist.co/api/v2/oauth/authorize
+          tokenUrl: https://anilist.co/api/v2/oauth/token
+          scopes: {}
+        implicit:
+          authorizationUrl: https://anilist.co/api/v2/oauth/authorize
+          scopes: {}
+  schemas:
+    GraphQLRequest:
+      title: GraphQLRequest
+      type: object
+      required:
+        - query
+      properties:
+        query:
+          type: string
+          description: GraphQL query or mutation document
+          example: "query { Viewer { id name } }"
+        variables:
+          type: object
+          additionalProperties: true
+          description: Map of variable values referenced in the query
+        operationName:
+          type: string
+          description: Name of the operation to execute when the document contains multiple
+    GraphQLResponse:
+      title: GraphQLResponse
+      type: object
+      properties:
+        data:
+          type: object
+          nullable: true
+          additionalProperties: true
+          description: Selection result tree shaped like the requested query
+        errors:
+          type: array
+          description: Array of GraphQL errors when the request was not fully successful
+          items:
+            $ref: '#/components/schemas/GraphQLError'
+        extensions:
+          type: object
+          additionalProperties: true
+    GraphQLError:
+      title: GraphQLError
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Too Many Requests."
+        status:
+          type: integer
+          example: 429
+        locations:
+          type: array
+          items:
+            type: object
+            properties:
+              line:
+                type: integer
+              column:
+                type: integer
+        path:
+          type: array
+          items:
+            oneOf:
+              - type: string
+              - type: integer
+    TokenRequest:
+      title: TokenRequest
+      type: object
+      required:
+        - grant_type
+        - client_id
+        - client_secret
+        - redirect_uri
+        - code
+      properties:
+        grant_type:
+          type: string
+          enum: [authorization_code]
+          example: authorization_code
+        client_id:
+          type: string
+        client_secret:
+          type: string
+        redirect_uri:
+          type: string
+          format: uri
+        code:
+          type: string
+          description: Authorization code received from the redirect
+    TokenResponse:
+      title: TokenResponse
+      type: object
+      properties:
+        token_type:
+          type: string
+          example: Bearer
+        expires_in:
+          type: integer
+          description: Token lifetime in seconds (1 year)
+          example: 31536000
+        access_token:
+          type: string
+          description: JWT access token
+        refresh_token:
+          type: string
+          nullable: true
+          description: AniList does not currently support refresh tokens
+security:
+  - {}
+  - bearerAuth: []

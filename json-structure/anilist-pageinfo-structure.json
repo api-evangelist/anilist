@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-pageinfo-structure.json",
+  "name": "PageInfo",
+  "description": "PageInfo schema from AniList GraphQL API v2",
+  "type": "object",
+  "properties": {
+    "total": {
+      "type": "int32",
+      "description": "The total number of items. Note: This value is not guaranteed to be accurate, do not rely on this for logic"
+    },
+    "perPage": {
+      "type": "int32",
+      "description": "The count on a page"
+    },
+    "currentPage": {
+      "type": "int32",
+      "description": "The current page"
+    },
+    "lastPage": {
+      "type": "int32",
+      "description": "The last page"
+    },
+    "hasNextPage": {
+      "type": "boolean",
+      "description": "If there is another page"
+    }
+  }
+}

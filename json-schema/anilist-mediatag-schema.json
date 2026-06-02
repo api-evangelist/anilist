@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-schema/anilist-mediatag-schema.json",
+  "title": "MediaTag",
+  "description": "A tag that describes a theme or element of the media",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "The id of the tag"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the tag"
+    },
+    "description": {
+      "type": "string",
+      "description": "A general description of the tag"
+    },
+    "category": {
+      "type": "string",
+      "description": "The categories of tags this tag belongs to"
+    },
+    "rank": {
+      "type": "integer",
+      "description": "The relevance ranking of the tag out of the 100 for this media"
+    },
+    "isGeneralSpoiler": {
+      "type": "boolean",
+      "description": "If the tag could be a spoiler for any media"
+    },
+    "isMediaSpoiler": {
+      "type": "boolean",
+      "description": "If the tag is a spoiler for this media"
+    },
+    "isAdult": {
+      "type": "boolean",
+      "description": "If the tag is only for adult 18+ media"
+    },
+    "userId": {
+      "type": "integer",
+      "description": "The user who submitted the tag"
+    }
+  },
+  "required": [
+    "id",
+    "name"
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "anilist": "https://anilist.co/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "graphql": "https://graphql.org/schema/",
+
+    "Media": "schema:CreativeWork",
+    "Anime": "schema:TVSeries",
+    "Manga": "schema:ComicSeries",
+    "MediaTitle": "anilist:MediaTitle",
+    "MediaCoverImage": "schema:ImageObject",
+    "MediaTag": "anilist:MediaTag",
+    "Character": "schema:Person",
+    "CharacterName": "schema:Person",
+    "CharacterImage": "schema:ImageObject",
+    "Staff": "schema:Person",
+    "StaffName": "schema:Person",
+    "StaffImage": "schema:ImageObject",
+    "Studio": "schema:Organization",
+    "User": "schema:Person",
+    "UserAvatar": "schema:ImageObject",
+    "UserOptions": "anilist:UserOptions",
+    "MediaList": "anilist:MediaList",
+    "MediaListCollection": "schema:Collection",
+    "AiringSchedule": "schema:BroadcastEvent",
+    "Review": "schema:Review",
+    "Recommendation": "schema:Recommendation",
+    "Thread": "schema:DiscussionForumPosting",
+    "ThreadComment": "schema:Comment",
+    "FuzzyDate": "anilist:FuzzyDate",
+    "PageInfo": "anilist:PageInfo",
+
+    "id": {
+      "@id": "schema:identifier",
+      "@type": "xsd:integer"
+    },
+    "idMal": {
+      "@id": "anilist:idMal",
+      "@type": "xsd:integer"
+    },
+    "name": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "schema:name"
+    },
+    "romaji": {
+      "@id": "anilist:titleRomaji",
+      "@type": "xsd:string"
+    },
+    "english": {
+      "@id": "schema:alternateName",
+      "@type": "xsd:string"
+    },
+    "native": {
+      "@id": "anilist:titleNative",
+      "@type": "xsd:string"
+    },
+    "userPreferred": {
+      "@id": "anilist:titleUserPreferred",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "anilist:mediaType",
+      "@type": "xsd:string"
+    },
+    "format": {
+      "@id": "anilist:mediaFormat",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "anilist:status",
+      "@type": "xsd:string"
+    },
+    "season": {
+      "@id": "anilist:season",
+      "@type": "xsd:string"
+    },
+    "seasonYear": {
+      "@id": "anilist:seasonYear",
+      "@type": "xsd:integer"
+    },
+    "episodes": {
+      "@id": "schema:numberOfEpisodes",
+      "@type": "xsd:integer"
+    },
+    "duration": {
+      "@id": "schema:duration",
+      "@type": "xsd:integer"
+    },
+    "chapters": {
+      "@id": "anilist:chapters",
+      "@type": "xsd:integer"
+    },
+    "volumes": {
+      "@id": "anilist:volumes",
+      "@type": "xsd:integer"
+    },
+    "isAdult": {
+      "@id": "anilist:isAdult",
+      "@type": "xsd:boolean"
+    },
+    "averageScore": {
+      "@id": "schema:aggregateRating",
+      "@type": "xsd:integer"
+    },
+    "meanScore": {
+      "@id": "anilist:meanScore",
+      "@type": "xsd:integer"
+    },
+    "popularity": {
+      "@id": "anilist:popularity",
+      "@type": "xsd:integer"
+    },
+    "trending": {
+      "@id": "anilist:trending",
+      "@type": "xsd:integer"
+    },
+    "favourites": {
+      "@id": "anilist:favourites",
+      "@type": "xsd:integer"
+    },
+    "source": {
+      "@id": "anilist:source",
+      "@type": "xsd:string"
+    },
+    "countryOfOrigin": {
+      "@id": "schema:countryOfOrigin",
+      "@type": "xsd:string"
+    },
+    "hashtag": {
+      "@id": "anilist:hashtag",
+      "@type": "xsd:string"
+    },
+    "siteUrl": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "coverImage": {
+      "@id": "schema:image"
+    },
+    "bannerImage": {
+      "@id": "schema:image",
+      "@type": "@id"
+    },
+    "image": {
+      "@id": "schema:image"
+    },
+    "large": {
+      "@id": "anilist:imageLarge",
+      "@type": "@id"
+    },
+    "medium": {
+      "@id": "anilist:imageMedium",
+      "@type": "@id"
+    },
+    "color": {
+      "@id": "anilist:imageColor",
+      "@type": "xsd:string"
+    },
+    "startDate": {
+      "@id": "schema:startDate"
+    },
+    "endDate": {
+      "@id": "schema:endDate"
+    },
+    "year": {
+      "@id": "anilist:dateYear",
+      "@type": "xsd:integer"
+    },
+    "month": {
+      "@id": "anilist:dateMonth",
+      "@type": "xsd:integer"
+    },
+    "day": {
+      "@id": "anilist:dateDay",
+      "@type": "xsd:integer"
+    },
+    "createdAt": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "updatedAt": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "airingAt": {
+      "@id": "schema:startDate",
+      "@type": "xsd:dateTime"
+    },
+    "timeUntilAiring": {
+      "@id": "anilist:timeUntilAiring",
+      "@type": "xsd:integer"
+    },
+    "episode": {
+      "@id": "schema:episodeNumber",
+      "@type": "xsd:integer"
+    },
+    "mediaId": {
+      "@id": "anilist:mediaId",
+      "@type": "xsd:integer"
+    },
+    "userId": {
+      "@id": "anilist:userId",
+      "@type": "xsd:integer"
+    },
+    "userName": {
+      "@id": "anilist:userName",
+      "@type": "xsd:string"
+    },
+    "score": {
+      "@id": "schema:reviewRating",
+      "@type": "xsd:number"
+    },
+    "progress": {
+      "@id": "anilist:listProgress",
+      "@type": "xsd:integer"
+    },
+    "progressVolumes": {
+      "@id": "anilist:listProgressVolumes",
+      "@type": "xsd:integer"
+    },
+    "repeat": {
+      "@id": "anilist:listRepeat",
+      "@type": "xsd:integer"
+    },
+    "priority": {
+      "@id": "anilist:listPriority",
+      "@type": "xsd:integer"
+    },
+    "private": {
+      "@id": "anilist:listPrivate",
+      "@type": "xsd:boolean"
+    },
+    "notes": {
+      "@id": "schema:comment",
+      "@type": "xsd:string"
+    },
+    "completedAt": {
+      "@id": "schema:dateCompleted"
+    },
+    "startedAt": {
+      "@id": "schema:startTime"
+    },
+    "advancedScores": {
+      "@id": "anilist:advancedScores"
+    },
+    "customLists": {
+      "@id": "anilist:customLists"
+    },
+    "hiddenFromStatusLists": {
+      "@id": "anilist:hiddenFromStatusLists",
+      "@type": "xsd:boolean"
+    },
+    "isFollowing": {
+      "@id": "anilist:isFollowing",
+      "@type": "xsd:boolean"
+    },
+    "isFollower": {
+      "@id": "anilist:isFollower",
+      "@type": "xsd:boolean"
+    },
+    "isBlocked": {
+      "@id": "anilist:isBlocked",
+      "@type": "xsd:boolean"
+    },
+    "isFavourite": {
+      "@id": "anilist:isFavourite",
+      "@type": "xsd:boolean"
+    },
+    "siteStatistics": {
+      "@id": "anilist:siteStatistics"
+    },
+    "tags": {
+      "@id": "schema:keywords",
+      "@container": "@set"
+    },
+    "genres": {
+      "@id": "schema:genre",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "synonyms": {
+      "@id": "schema:alternateName",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "externalLinks": {
+      "@id": "schema:sameAs",
+      "@container": "@set"
+    },
+    "streamingEpisodes": {
+      "@id": "schema:episode",
+      "@container": "@set"
+    },
+    "relations": {
+      "@id": "anilist:relations",
+      "@container": "@set"
+    },
+    "characters": {
+      "@id": "schema:character",
+      "@container": "@set"
+    },
+    "staff": {
+      "@id": "anilist:staff",
+      "@container": "@set"
+    },
+    "studios": {
+      "@id": "anilist:studios",
+      "@container": "@set"
+    },
+    "recommendations": {
+      "@id": "anilist:recommendations",
+      "@container": "@set"
+    },
+    "reviews": {
+      "@id": "schema:review",
+      "@container": "@set"
+    },
+    "rankings": {
+      "@id": "anilist:rankings",
+      "@container": "@set"
+    },
+    "trends": {
+      "@id": "anilist:trends",
+      "@container": "@set"
+    },
+    "stats": {
+      "@id": "anilist:stats"
+    },
+
+    "query": {
+      "@id": "graphql:query",
+      "@type": "xsd:string"
+    },
+    "variables": {
+      "@id": "graphql:variables"
+    },
+    "operationName": {
+      "@id": "graphql:operationName",
+      "@type": "xsd:string"
+    },
+    "data": {
+      "@id": "graphql:data"
+    },
+    "errors": {
+      "@id": "graphql:errors",
+      "@container": "@set"
+    },
+    "message": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "extensions": {
+      "@id": "graphql:extensions"
+    },
+    "locations": {
+      "@id": "graphql:locations",
+      "@container": "@set"
+    },
+    "path": {
+      "@id": "graphql:path",
+      "@container": "@list"
+    },
+
+    "access_token": {
+      "@id": "anilist:accessToken",
+      "@type": "xsd:string"
+    },
+    "token_type": {
+      "@id": "anilist:tokenType",
+      "@type": "xsd:string"
+    },
+    "expires_in": {
+      "@id": "anilist:expiresIn",
+      "@type": "xsd:integer"
+    },
+    "refresh_token": {
+      "@id": "anilist:refreshToken",
+      "@type": "xsd:string"
+    },
+    "client_id": {
+      "@id": "anilist:clientId",
+      "@type": "xsd:string"
+    },
+    "client_secret": {
+      "@id": "anilist:clientSecret",
+      "@type": "xsd:string"
+    },
+    "redirect_uri": {
+      "@id": "anilist:redirectUri",
+      "@type": "@id"
+    },
+    "response_type": {
+      "@id": "anilist:responseType",
+      "@type": "xsd:string"
+    },
+    "grant_type": {
+      "@id": "anilist:grantType",
+      "@type": "xsd:string"
+    },
+    "code": {
+      "@id": "anilist:authorizationCode",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "anilist:oauthState",
+      "@type": "xsd:string"
+    }
+  }
+}

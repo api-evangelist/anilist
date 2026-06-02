@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-schema/anilist-thread-schema.json",
+  "title": "Thread",
+  "description": "Forum Thread",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "The id of the thread"
+    },
+    "title": {
+      "type": "string",
+      "description": "The title of the thread"
+    },
+    "body": {
+      "type": "string",
+      "description": "The text body of the thread (Markdown)"
+    },
+    "userId": {
+      "type": "integer",
+      "description": "The id of the thread owner user"
+    },
+    "replyUserId": {
+      "type": "integer",
+      "description": "The id of the user who most recently commented on the thread"
+    },
+    "replyCommentId": {
+      "type": "integer",
+      "description": "The id of the most recent comment on the thread"
+    },
+    "replyCount": {
+      "type": "integer",
+      "description": "The number of comments on the thread"
+    },
+    "viewCount": {
+      "type": "integer",
+      "description": "The number of times users have viewed the thread"
+    },
+    "isLocked": {
+      "type": "boolean",
+      "description": "If the thread is locked and can receive comments"
+    },
+    "isSticky": {
+      "type": "boolean",
+      "description": "If the thread is stickied and should be displayed at the top of the page"
+    },
+    "isSubscribed": {
+      "type": "boolean",
+      "description": "If the currently authenticated user is subscribed to the thread"
+    },
+    "likeCount": {
+      "type": "integer",
+      "description": "The amount of likes the thread has"
+    },
+    "isLiked": {
+      "type": "boolean",
+      "description": "If the currently authenticated user liked the thread"
+    },
+    "repliedAt": {
+      "type": "integer",
+      "description": "The time of the last reply"
+    },
+    "createdAt": {
+      "type": "integer",
+      "description": "The time of the thread creation"
+    },
+    "updatedAt": {
+      "type": "integer",
+      "description": "The time of the thread last update"
+    },
+    "user": {
+      "$ref": "./anilist-user-schema.json",
+      "description": "The owner of the thread"
+    },
+    "replyUser": {
+      "$ref": "./anilist-user-schema.json",
+      "description": "The user to last reply to the thread"
+    },
+    "likes": {
+      "type": "array",
+      "items": {
+        "$ref": "./anilist-user-schema.json"
+      },
+      "description": "The users who liked the thread"
+    },
+    "siteUrl": {
+      "type": "string",
+      "description": "The url for the thread page on the AniList website"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "$ref": "./anilist-threadcategory-schema.json"
+      },
+      "description": "The categories of the thread"
+    },
+    "mediaCategories": {
+      "type": "array",
+      "items": {
+        "$ref": "./anilist-media-schema.json"
+      },
+      "description": "The media categories of the thread"
+    }
+  },
+  "required": [
+    "id",
+    "userId",
+    "likeCount",
+    "createdAt",
+    "updatedAt"
+  ]
+}

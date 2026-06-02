@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-user-structure.json",
+  "name": "User",
+  "description": "A user",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "int32",
+      "description": "The id of the user"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the user"
+    },
+    "about": {
+      "type": "string",
+      "description": "The bio written by user (Markdown)"
+    },
+    "avatar": {
+      "description": "The user's avatar images",
+      "$ref": "./anilist-useravatar-structure.json"
+    },
+    "bannerImage": {
+      "type": "string",
+      "description": "The user's banner images"
+    },
+    "isFollowing": {
+      "type": "boolean",
+      "description": "If the authenticated user if following this user"
+    },
+    "isFollower": {
+      "type": "boolean",
+      "description": "If this user if following the authenticated user"
+    },
+    "isBlocked": {
+      "type": "boolean",
+      "description": "If the user is blocked by the authenticated user"
+    },
+    "bans": {
+      "type": "object"
+    },
+    "options": {
+      "description": "The user's general options",
+      "$ref": "./anilist-useroptions-structure.json"
+    },
+    "mediaListOptions": {
+      "description": "The user's media list options",
+      "$ref": "./anilist-medialistoptions-structure.json"
+    },
+    "favourites": {
+      "description": "The users favourites",
+      "$ref": "./anilist-favourites-structure.json"
+    },
+    "statistics": {
+      "description": "The users anime & manga list statistics",
+      "$ref": "./anilist-userstatistictypes-structure.json"
+    },
+    "unreadNotificationCount": {
+      "type": "int32",
+      "description": "The number of unread notifications the user has"
+    },
+    "siteUrl": {
+      "type": "string",
+      "description": "The url for the user page on the AniList website"
+    },
+    "donatorTier": {
+      "type": "int32",
+      "description": "The donation tier of the user"
+    },
+    "donatorBadge": {
+      "type": "string",
+      "description": "Custom donation badge text"
+    },
+    "moderatorRoles": {
+      "type": "array",
+      "description": "The user's moderator roles if they are a site moderator",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ADMIN",
+          "LEAD_DEVELOPER",
+          "DEVELOPER",
+          "LEAD_COMMUNITY",
+          "COMMUNITY",
+          "DISCORD_COMMUNITY",
+          "LEAD_ANIME_DATA",
+          "ANIME_DATA",
+          "LEAD_MANGA_DATA",
+          "MANGA_DATA",
+          "LEAD_SOCIAL_MEDIA",
+          "SOCIAL_MEDIA",
+          "RETIRED",
+          "CHARACTER_DATA",
+          "STAFF_DATA"
+        ]
+      }
+    },
+    "createdAt": {
+      "type": "int32",
+      "description": "When the user's account was created. (Does not exist for accounts created before 2020)"
+    },
+    "updatedAt": {
+      "type": "int32",
+      "description": "When the user's data was last updated"
+    },
+    "stats": {
+      "description": "The user's statistics",
+      "deprecated": true,
+      "$ref": "./anilist-userstats-structure.json"
+    },
+    "moderatorStatus": {
+      "type": "string",
+      "description": "If the user is a moderator or data moderator",
+      "deprecated": true
+    },
+    "previousNames": {
+      "type": "array",
+      "description": "The user's previously used names.",
+      "items": {
+        "$ref": "./anilist-userpreviousname-structure.json"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "name"
+  ]
+}

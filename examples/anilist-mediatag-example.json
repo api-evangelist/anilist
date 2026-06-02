@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "name": "Sample Name",
+  "description": "Sample description.",
+  "category": "string",
+  "rank": 1,
+  "isGeneralSpoiler": false,
+  "isMediaSpoiler": false,
+  "isAdult": false,
+  "userId": 1
+}

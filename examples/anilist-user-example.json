@@ -1,0 +1,47 @@
+{
+  "id": 1,
+  "name": "Sample Name",
+  "about": "string",
+  "avatar": {
+    "large": "string",
+    "medium": "string"
+  },
+  "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/example.jpg",
+  "isFollowing": false,
+  "isFollower": false,
+  "isBlocked": false,
+  "bans": {},
+  "options": {
+    "titleLanguage": "ROMAJI",
+    "displayAdultContent": false,
+    "airingNotifications": false,
+    "profileColor": "#3DB4F2",
+    "notificationOptions": [
+      {}
+    ],
+    "timezone": "string",
+    "activityMergeTime": 1748563200,
+    "staffNameLanguage": "ROMAJI_WESTERN",
+    "restrictMessagesToFollowing": false,
+    "disabledListActivity": [
+      {}
+    ]
+  },
+  "mediaListOptions": {},
+  "favourites": {},
+  "statistics": {},
+  "unreadNotificationCount": 1,
+  "siteUrl": "https://anilist.co/anime/1",
+  "donatorTier": 1,
+  "donatorBadge": "string",
+  "moderatorRoles": [
+    "ADMIN"
+  ],
+  "createdAt": 1748563200,
+  "updatedAt": 1748563200,
+  "stats": {},
+  "moderatorStatus": "string",
+  "previousNames": [
+    {}
+  ]
+}

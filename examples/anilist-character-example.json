@@ -1,0 +1,37 @@
+{
+  "id": 1,
+  "name": {
+    "first": "string",
+    "middle": "string",
+    "last": "string",
+    "full": "string",
+    "native": "カウボーイビバップ",
+    "alternative": [
+      "カウボーイビバップ"
+    ],
+    "alternativeSpoiler": [
+      "カウボーイビバップ"
+    ],
+    "userPreferred": "string"
+  },
+  "image": {
+    "large": "string",
+    "medium": "string"
+  },
+  "description": "Sample description.",
+  "gender": "string",
+  "dateOfBirth": {
+    "year": 1998,
+    "month": 4,
+    "day": 3
+  },
+  "age": "string",
+  "bloodType": "string",
+  "isFavourite": false,
+  "isFavouriteBlocked": false,
+  "siteUrl": "https://anilist.co/anime/1",
+  "media": {},
+  "updatedAt": 1748563200,
+  "favourites": 87,
+  "modNotes": "string"
+}

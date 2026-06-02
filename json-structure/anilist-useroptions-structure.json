@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-useroptions-structure.json",
+  "name": "UserOptions",
+  "description": "A user's general options",
+  "type": "object",
+  "properties": {
+    "titleLanguage": {
+      "type": "string",
+      "description": "The language the user wants to see media titles in",
+      "enum": [
+        "ROMAJI",
+        "ENGLISH",
+        "NATIVE",
+        "ROMAJI_STYLISED",
+        "ENGLISH_STYLISED",
+        "NATIVE_STYLISED"
+      ]
+    },
+    "displayAdultContent": {
+      "type": "boolean",
+      "description": "Whether the user has enabled viewing of 18+ content"
+    },
+    "airingNotifications": {
+      "type": "boolean",
+      "description": "Whether the user receives notifications when a show they are watching aires"
+    },
+    "profileColor": {
+      "type": "string",
+      "description": "Profile highlight color (blue, purple, pink, orange, red, green, gray)"
+    },
+    "notificationOptions": {
+      "type": "array",
+      "description": "Notification options",
+      "items": {
+        "$ref": "./anilist-notificationoption-structure.json"
+      }
+    },
+    "timezone": {
+      "type": "string",
+      "description": "The user's timezone offset (Auth user only)"
+    },
+    "activityMergeTime": {
+      "type": "int32",
+      "description": "Minutes between activity for them to be merged together. 0 is Never, Above 2 weeks (20160 mins) is Always."
+    },
+    "staffNameLanguage": {
+      "type": "string",
+      "description": "The language the user wants to see staff and character names in",
+      "enum": [
+        "ROMAJI_WESTERN",
+        "ROMAJI",
+        "NATIVE"
+      ]
+    },
+    "restrictMessagesToFollowing": {
+      "type": "boolean",
+      "description": "Whether the user only allow messages from users they follow"
+    },
+    "disabledListActivity": {
+      "type": "array",
+      "description": "The list activity types the user has disabled from being created from list updates",
+      "items": {
+        "$ref": "./anilist-listactivityoption-structure.json"
+      }
+    }
+  }
+}

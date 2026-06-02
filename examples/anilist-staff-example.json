@@ -1,0 +1,198 @@
+{
+  "id": 1,
+  "name": {
+    "first": "string",
+    "middle": "string",
+    "last": "string",
+    "full": "string",
+    "native": "カウボーイビバップ",
+    "alternative": [
+      "カウボーイビバップ"
+    ],
+    "userPreferred": "string"
+  },
+  "language": "JAPANESE",
+  "languageV2": "string",
+  "image": {
+    "large": "string",
+    "medium": "string"
+  },
+  "description": "Sample description.",
+  "primaryOccupations": [
+    "string"
+  ],
+  "gender": "string",
+  "dateOfBirth": {
+    "year": 1998,
+    "month": 4,
+    "day": 3
+  },
+  "dateOfDeath": {
+    "year": 1998,
+    "month": 4,
+    "day": 3
+  },
+  "age": 1,
+  "yearsActive": [
+    1998
+  ],
+  "homeTown": "string",
+  "bloodType": "string",
+  "isFavourite": false,
+  "isFavouriteBlocked": false,
+  "siteUrl": "https://anilist.co/anime/1",
+  "staffMedia": {},
+  "characters": {},
+  "characterMedia": {},
+  "updatedAt": 1748563200,
+  "staff": {
+    "id": 1,
+    "name": {
+      "first": "string",
+      "middle": "string",
+      "last": "string",
+      "full": "string",
+      "native": "カウボーイビバップ",
+      "alternative": [
+        "カウボーイビバップ"
+      ],
+      "userPreferred": "string"
+    },
+    "language": "JAPANESE",
+    "languageV2": "string",
+    "image": {
+      "large": "string",
+      "medium": "string"
+    },
+    "description": "Sample description.",
+    "primaryOccupations": [
+      "string"
+    ],
+    "gender": "string",
+    "dateOfBirth": {
+      "year": 1998,
+      "month": 4,
+      "day": 3
+    },
+    "dateOfDeath": {
+      "year": 1998,
+      "month": 4,
+      "day": 3
+    },
+    "age": 1,
+    "yearsActive": [
+      1998
+    ],
+    "homeTown": "string",
+    "bloodType": "string",
+    "isFavourite": false,
+    "isFavouriteBlocked": false,
+    "siteUrl": "https://anilist.co/anime/1",
+    "staffMedia": {},
+    "characters": {},
+    "characterMedia": {},
+    "updatedAt": 1748563200,
+    "staff": {
+      "id": 1,
+      "language": "JAPANESE",
+      "languageV2": "string",
+      "description": "Sample description.",
+      "primaryOccupations": [
+        "string"
+      ],
+      "gender": "string",
+      "age": 1,
+      "yearsActive": [
+        1998
+      ],
+      "homeTown": "string",
+      "bloodType": "string",
+      "isFavourite": false,
+      "isFavouriteBlocked": false,
+      "siteUrl": "https://anilist.co/anime/1",
+      "updatedAt": 1748563200,
+      "submissionStatus": 200,
+      "submissionNotes": "string",
+      "favourites": 87,
+      "modNotes": "string"
+    },
+    "submitter": {
+      "id": 1,
+      "name": "Sample Name",
+      "about": "string",
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/example.jpg",
+      "isFollowing": false,
+      "isFollower": false,
+      "isBlocked": false,
+      "bans": {},
+      "unreadNotificationCount": 1,
+      "siteUrl": "https://anilist.co/anime/1",
+      "donatorTier": 1,
+      "donatorBadge": "string",
+      "moderatorRoles": [
+        "ADMIN"
+      ],
+      "createdAt": 1748563200,
+      "updatedAt": 1748563200,
+      "moderatorStatus": "string",
+      "previousNames": [
+        {}
+      ]
+    },
+    "submissionStatus": 200,
+    "submissionNotes": "string",
+    "favourites": 87,
+    "modNotes": "string"
+  },
+  "submitter": {
+    "id": 1,
+    "name": "Sample Name",
+    "about": "string",
+    "avatar": {
+      "large": "string",
+      "medium": "string"
+    },
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/example.jpg",
+    "isFollowing": false,
+    "isFollower": false,
+    "isBlocked": false,
+    "bans": {},
+    "options": {
+      "titleLanguage": "ROMAJI",
+      "displayAdultContent": false,
+      "airingNotifications": false,
+      "profileColor": "#3DB4F2",
+      "notificationOptions": [
+        {}
+      ],
+      "timezone": "string",
+      "activityMergeTime": 1748563200,
+      "staffNameLanguage": "ROMAJI_WESTERN",
+      "restrictMessagesToFollowing": false,
+      "disabledListActivity": [
+        {}
+      ]
+    },
+    "mediaListOptions": {},
+    "favourites": {},
+    "statistics": {},
+    "unreadNotificationCount": 1,
+    "siteUrl": "https://anilist.co/anime/1",
+    "donatorTier": 1,
+    "donatorBadge": "string",
+    "moderatorRoles": [
+      "ADMIN"
+    ],
+    "createdAt": 1748563200,
+    "updatedAt": 1748563200,
+    "stats": {},
+    "moderatorStatus": "string",
+    "previousNames": [
+      {}
+    ]
+  },
+  "submissionStatus": 200,
+  "submissionNotes": "string",
+  "favourites": 87,
+  "modNotes": "string"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anilist/refs/heads/main/json-structure/anilist-mediatitle-structure.json",
+  "name": "MediaTitle",
+  "description": "The official titles of the media in various languages",
+  "type": "object",
+  "properties": {
+    "romaji": {
+      "type": "string",
+      "description": "The romanization of the native language title"
+    },
+    "english": {
+      "type": "string",
+      "description": "The official english title"
+    },
+    "native": {
+      "type": "string",
+      "description": "Official title in it's native language"
+    },
+    "userPreferred": {
+      "type": "string",
+      "description": "The currently authenticated users preferred title language. Default romaji for non-authenticated"
+    }
+  }
+}

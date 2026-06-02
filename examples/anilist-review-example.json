@@ -1,0 +1,173 @@
+{
+  "id": 1,
+  "userId": 1,
+  "mediaId": 1,
+  "mediaType": "ANIME",
+  "summary": "Sample description.",
+  "body": "string",
+  "rating": 1,
+  "ratingAmount": 1,
+  "userRating": "NO_VOTE",
+  "score": 87,
+  "private": false,
+  "siteUrl": "https://anilist.co/anime/1",
+  "createdAt": 1748563200,
+  "updatedAt": 1748563200,
+  "user": {
+    "id": 1,
+    "name": "Sample Name",
+    "about": "string",
+    "avatar": {
+      "large": "string",
+      "medium": "string"
+    },
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/example.jpg",
+    "isFollowing": false,
+    "isFollower": false,
+    "isBlocked": false,
+    "bans": {},
+    "options": {
+      "titleLanguage": "ROMAJI",
+      "displayAdultContent": false,
+      "airingNotifications": false,
+      "profileColor": "#3DB4F2",
+      "notificationOptions": [
+        {}
+      ],
+      "timezone": "string",
+      "activityMergeTime": 1748563200,
+      "staffNameLanguage": "ROMAJI_WESTERN",
+      "restrictMessagesToFollowing": false,
+      "disabledListActivity": [
+        {}
+      ]
+    },
+    "mediaListOptions": {},
+    "favourites": {},
+    "statistics": {},
+    "unreadNotificationCount": 1,
+    "siteUrl": "https://anilist.co/anime/1",
+    "donatorTier": 1,
+    "donatorBadge": "string",
+    "moderatorRoles": [
+      "ADMIN"
+    ],
+    "createdAt": 1748563200,
+    "updatedAt": 1748563200,
+    "stats": {},
+    "moderatorStatus": "string",
+    "previousNames": [
+      {}
+    ]
+  },
+  "media": {
+    "id": 1,
+    "idMal": 1,
+    "title": {
+      "romaji": "Cowboy Bebop",
+      "english": "Cowboy Bebop",
+      "native": "カウボーイビバップ",
+      "userPreferred": "string"
+    },
+    "type": "ANIME",
+    "format": "TV",
+    "status": "FINISHED",
+    "description": "Sample description.",
+    "startDate": {
+      "year": 1998,
+      "month": 4,
+      "day": 3
+    },
+    "endDate": {
+      "year": 1998,
+      "month": 4,
+      "day": 3
+    },
+    "season": "WINTER",
+    "seasonYear": 1998,
+    "seasonInt": 1,
+    "episodes": 26,
+    "duration": 24,
+    "chapters": 0,
+    "volumes": 0,
+    "countryOfOrigin": "string",
+    "isLicensed": false,
+    "source": "ORIGINAL",
+    "hashtag": "string",
+    "trailer": {},
+    "updatedAt": 1748563200,
+    "coverImage": {
+      "extraLarge": "string",
+      "large": "string",
+      "medium": "string",
+      "color": "#3DB4F2"
+    },
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/example.jpg",
+    "genres": [
+      "string"
+    ],
+    "synonyms": [
+      "string"
+    ],
+    "averageScore": 87,
+    "meanScore": 87,
+    "popularity": 87,
+    "isLocked": false,
+    "trending": 100,
+    "favourites": 87,
+    "tags": [
+      {}
+    ],
+    "relations": {},
+    "characters": {},
+    "staff": {},
+    "studios": {},
+    "isFavourite": false,
+    "isFavouriteBlocked": false,
+    "isAdult": false,
+    "nextAiringEpisode": {
+      "id": 1,
+      "airingAt": 1748563200,
+      "timeUntilAiring": 1748563200,
+      "episode": 26,
+      "mediaId": 1
+    },
+    "airingSchedule": {},
+    "trends": {},
+    "externalLinks": [
+      {}
+    ],
+    "streamingEpisodes": [
+      {}
+    ],
+    "rankings": [
+      {}
+    ],
+    "mediaListEntry": {
+      "id": 1,
+      "userId": 1,
+      "mediaId": 1,
+      "status": "CURRENT",
+      "score": 9.0,
+      "progress": 1,
+      "progressVolumes": 0,
+      "repeat": 1748563200,
+      "priority": 1,
+      "private": false,
+      "notes": "string",
+      "hiddenFromStatusLists": false,
+      "customLists": {},
+      "advancedScores": {},
+      "updatedAt": 1748563200,
+      "createdAt": 1748563200
+    },
+    "reviews": {},
+    "recommendations": {},
+    "stats": {},
+    "siteUrl": "https://anilist.co/anime/1",
+    "autoCreateForumThread": false,
+    "isRecommendationBlocked": false,
+    "isReviewBlocked": false,
+    "modNotes": "string"
+  }
+}
