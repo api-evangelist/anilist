@@ -19,189 +19,191 @@ x-category: Anime
 x-tier: 3
 x-tier-reason: bulk-registered-from-public-apis
 tags:
+- Anime
+- Manga
+- Entertainment
+- Media
+- Social
+- Database
+- GraphQL
+- OAuth2
+- Public APIs
+apis:
+- name: AniList GraphQL API v2
+  description: >-
+    The AniList GraphQL API v2 is the primary public developer interface for
+    AniList.co. It exposes anime, manga, character, staff, studio, user,
+    activity, review, recommendation, thread, comment, notification, and
+    airing schedule data through a single endpoint at
+    https://graphql.anilist.co. All requests are POSTs carrying a query and
+    optional variables payload. Mutations require an OAuth2 access token.
+    The schema includes 25+ root Query fields (Page, Media, MediaTrend,
+    AiringSchedule, Character, Staff, MediaList, MediaListCollection,
+    GenreCollection, MediaTagCollection, User, Viewer, Notification,
+    Studio, Review, Activity, ActivityReply, Following, Follower, Thread,
+    ThreadComment, Recommendation, Like, Markdown, AniChartUser,
+    SiteStatistics, ExternalLinkSourceCollection) and 30+ root Mutation
+    fields (UpdateUser, SaveMediaListEntry, UpdateMediaListEntries,
+    DeleteMediaListEntry, DeleteCustomList, SaveTextActivity,
+    SaveMessageActivity, SaveListActivity, DeleteActivity,
+    ToggleActivityPin, ToggleActivitySubscription, SaveActivityReply,
+    DeleteActivityReply, ToggleLike, ToggleLikeV2, ToggleFollow,
+    ToggleFavourite, UpdateFavouriteOrder, SaveReview, DeleteReview,
+    RateReview, SaveRecommendation, SaveThread, DeleteThread,
+    ToggleThreadSubscription, SaveThreadComment, DeleteThreadComment,
+    UpdateAniChartSettings, UpdateAniChartHighlights).
+  humanURL: https://docs.anilist.co/
+  baseURL: https://graphql.anilist.co
+  tags:
+  - GraphQL
   - Anime
   - Manga
-  - Entertainment
   - Media
   - Social
-  - Database
-  - GraphQL
-  - OAuth2
-  - Public APIs
-apis:
-  - name: AniList GraphQL API v2
-    description: >-
-      The AniList GraphQL API v2 is the primary public developer interface for
-      AniList.co. It exposes anime, manga, character, staff, studio, user,
-      activity, review, recommendation, thread, comment, notification, and
-      airing schedule data through a single endpoint at
-      https://graphql.anilist.co. All requests are POSTs carrying a query and
-      optional variables payload. Mutations require an OAuth2 access token.
-      The schema includes 25+ root Query fields (Page, Media, MediaTrend,
-      AiringSchedule, Character, Staff, MediaList, MediaListCollection,
-      GenreCollection, MediaTagCollection, User, Viewer, Notification,
-      Studio, Review, Activity, ActivityReply, Following, Follower, Thread,
-      ThreadComment, Recommendation, Like, Markdown, AniChartUser,
-      SiteStatistics, ExternalLinkSourceCollection) and 30+ root Mutation
-      fields (UpdateUser, SaveMediaListEntry, UpdateMediaListEntries,
-      DeleteMediaListEntry, DeleteCustomList, SaveTextActivity,
-      SaveMessageActivity, SaveListActivity, DeleteActivity,
-      ToggleActivityPin, ToggleActivitySubscription, SaveActivityReply,
-      DeleteActivityReply, ToggleLike, ToggleLikeV2, ToggleFollow,
-      ToggleFavourite, UpdateFavouriteOrder, SaveReview, DeleteReview,
-      RateReview, SaveRecommendation, SaveThread, DeleteThread,
-      ToggleThreadSubscription, SaveThreadComment, DeleteThreadComment,
-      UpdateAniChartSettings, UpdateAniChartHighlights).
-    humanURL: https://docs.anilist.co/
-    baseURL: https://graphql.anilist.co
-    tags:
-      - GraphQL
-      - Anime
-      - Manga
-      - Media
-      - Social
-    properties:
-      - type: Documentation
-        url: https://docs.anilist.co/
-      - type: GettingStarted
-        url: https://docs.anilist.co/guide/introduction
-      - type: Quickstart
-        url: https://docs.anilist.co/guide/graphql/
-      - type: APIReference
-        url: https://docs.anilist.co/reference/
-      - type: Authentication
-        url: https://docs.anilist.co/guide/auth/
-      - type: RateLimits
-        url: https://docs.anilist.co/guide/rate-limiting
-        data:
-          - name: Default per-IP/user rate limit
-            description: 90 requests per minute under normal conditions; currently degraded to 30 requests per minute. X-RateLimit-Limit and X-RateLimit-Remaining headers are returned. Exceeding the limit returns HTTP 429 with Retry-After and X-RateLimit-Reset headers and a GraphQL "Too Many Requests." error.
-          - name: Burst limiter
-            description: An additional burst limiter throttles bursts of requests over very short windows.
-      - type: Sandbox
-        url: https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fgraphql.anilist.co
-      - type: Console
-        url: https://anilist.co/settings/developer
-      - type: Errors
-        url: https://docs.anilist.co/guide/graphql/errors
-common:
-  - type: Website
-    url: https://anilist.co/
+  properties:
   - type: Documentation
     url: https://docs.anilist.co/
-  - type: APIReference
-    url: https://docs.anilist.co/reference/
   - type: GettingStarted
     url: https://docs.anilist.co/guide/introduction
   - type: Quickstart
     url: https://docs.anilist.co/guide/graphql/
+  - type: APIReference
+    url: https://docs.anilist.co/reference/
   - type: Authentication
     url: https://docs.anilist.co/guide/auth/
-  - type: SignUp
-    url: https://anilist.co/signup
-  - type: Login
-    url: https://anilist.co/login
-  - type: DeveloperPortal
-    url: https://anilist.co/settings/developer
-  - type: Console
-    url: https://anilist.co/settings/developer
+  - type: RateLimits
+    url: https://docs.anilist.co/guide/rate-limiting
+    data:
+    - name: Default per-IP/user rate limit
+      description: 90 requests per minute under normal conditions; currently degraded to 30 requests per minute. X-RateLimit-Limit and X-RateLimit-Remaining headers are returned. Exceeding the limit returns HTTP 429 with Retry-After and X-RateLimit-Reset headers and a GraphQL "Too Many Requests." error.
+    - name: Burst limiter
+      description: An additional burst limiter throttles bursts of requests over very short windows.
   - type: Sandbox
     url: https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fgraphql.anilist.co
-  - type: Pricing
-    url: https://docs.anilist.co/guide/terms-of-use#commercial-usage
-    data:
-      - name: Free
-        description: Free for non-commercial usage and for commercial use under $150 of revenue per month.
-      - name: Commercial
-        description: Applications or services generating more than $150/month in revenue require a commercial license; contact contact@anilist.co.
-  - type: TermsOfService
-    url: https://docs.anilist.co/guide/terms-of-use
-  - type: PrivacyPolicy
-    url: https://anilist.co/terms
-  - type: GitHubOrganization
-    url: https://github.com/AniList
-  - type: GitHubRepository
-    url: https://github.com/AniList/docs
-  - type: Support
-    url: mailto:contact@anilist.co
-  - type: Contact
-    url: mailto:contact@anilist.co
-  - type: Blog
-    url: https://anistaff.medium.com/
-  - type: X
-    url: https://x.com/AniListco
-  - type: SDK
-    url: https://github.com/topics/anilist
-    data:
-      - name: Community SDKs
-        description: AniList does not publish official SDKs. Community libraries exist for JavaScript/TypeScript, PHP, Python, Rust, Kotlin, Swift, Dart, and more — many discoverable via the `anilist` GitHub topic. The official docs include code snippets for JavaScript, PHP, Python, and Rust.
-  - type: CodeExamples
-    url: https://github.com/AniList/docs/tree/main/docs/guide/snippets
-  - type: Tools
-    title: Community MCP Server (yuna0x0/anilist-mcp)
-    url: https://github.com/yuna0x0/anilist-mcp
-  - type: PublicAPIsListing
-    url: https://github.com/public-apis/public-apis
-  - type: Features
-    data:
-      - name: Comprehensive Media Catalog
-        description: 500,000+ anime and manga entries with rich metadata including titles, formats, statuses, episodes, chapters, durations, genres, tags, scores, popularity, trends, external links, and relations.
-      - name: Character & Staff Database
-        description: Searchable directories of characters and staff with relationships, voice actors, role credits, and birthday filters.
-      - name: Studio Directory
-        description: Catalog of anime studios with associated media production credits.
-      - name: User Lists & Social Graph
-        description: MediaList / MediaListCollection queries and mutations let apps read and write a user's anime/manga lists, custom lists, follows, favourites, likes, and activity feed.
-      - name: Activity, Reviews, Recommendations, Threads
-        description: Read and write social activity (text/message/list), reviews, recommendations, forum threads, and thread comments.
-      - name: Notifications
-        description: Per-user notification stream with type filtering and unread-count reset.
-      - name: Airing Schedule & Trends
-        description: AiringSchedule queries for upcoming episode airings; MediaTrend queries for time-series popularity and score trends.
-      - name: Site Statistics
-        description: Aggregate site statistics across users, anime, and manga.
-      - name: AniChart Integration
-        description: AniChartUser settings and highlights for the AniChart seasonal anime chart.
-      - name: Pagination via Page Type
-        description: All list-returning queries are wrapped in a Page object with pageInfo (currentPage, lastPage, total, hasNextPage) for cursor-less pagination.
-      - name: Server-side Markdown Rendering
-        description: Markdown query converts AniList-flavored markdown to HTML (auth required).
-  - type: UseCases
-    data:
-      - name: Anime/Manga Discovery Apps
-        description: Browse and search the catalog by season, format, genre, tag, popularity, score, source, country of origin, and free-text query.
-      - name: Personal Tracker & List Sync
-        description: Authenticated apps can read and write a user's watching/reading/completed/paused/dropped/planning lists, custom lists, scores, and progress.
-      - name: Airing Calendar / Notification Bots
-        description: Discord, Telegram, and web bots that surface upcoming episode airings, season schedules, and per-user notifications.
-      - name: Social & Community Frontends
-        description: Alternative frontends that render activity feeds, reviews, recommendations, and forum threads.
-      - name: Recommendation Engines
-        description: Build recommendation systems using user list data, scoring, genres, tags, and the built-in Recommendation graph.
-      - name: Data Visualization & Analytics
-        description: Trend dashboards, AniChart-style seasonal charts, and statistics visualizations built on MediaTrend and SiteStatistics queries.
-      - name: GraphQL Codegen / Typed Clients
-        description: Generate strongly typed clients in TypeScript, Rust, Kotlin, Swift, Dart, and others against the public schema for editor-completion and compile-time safety.
-  - type: Integrations
-    data:
-      - name: MyAnimeList
-        description: Media entries carry an `idMal` field cross-referencing MyAnimeList's canonical ID.
-      - name: External Link Sources
-        description: ExternalLinkSourceCollection exposes streaming, reading, social, and information sites linked from media entries (Crunchyroll, Funimation, Netflix, Hulu, VIZ, Comixology, Wikipedia, official sites, etc.).
-      - name: AniChart
-        description: AniChart.net seasonal anime chart is powered by the same API; AniChartUser settings are mutable through the API.
-      - name: Discord
-        description: Official AniList Discord server provides API status and community support; the AniList org publishes a Discord search bot.
-      - name: Apollo Studio
-        description: AniList exposes its schema through Apollo Studio's hosted sandbox explorer for interactive query authoring.
-  - type: Solutions
-    data:
-      - name: Non-commercial / Hobby
-        description: Free use, subject to terms (no data hoarding, no backup/storage abuse, no competing tracker without sustained AniList sync).
-      - name: Commercial under $150/mo
-        description: Free for commercial applications generating less than $150 in monthly revenue, no permission required.
-      - name: Commercial over $150/mo
-        description: Requires a commercial license arranged via contact@anilist.co.
+  - type: Console
+    url: https://anilist.co/settings/developer
+  - type: Errors
+    url: https://docs.anilist.co/guide/graphql/errors
+  - url: graphql/anilist-graphql.md
+    type: GraphQL
+common:
+- type: Website
+  url: https://anilist.co/
+- type: Documentation
+  url: https://docs.anilist.co/
+- type: APIReference
+  url: https://docs.anilist.co/reference/
+- type: GettingStarted
+  url: https://docs.anilist.co/guide/introduction
+- type: Quickstart
+  url: https://docs.anilist.co/guide/graphql/
+- type: Authentication
+  url: https://docs.anilist.co/guide/auth/
+- type: SignUp
+  url: https://anilist.co/signup
+- type: Login
+  url: https://anilist.co/login
+- type: DeveloperPortal
+  url: https://anilist.co/settings/developer
+- type: Console
+  url: https://anilist.co/settings/developer
+- type: Sandbox
+  url: https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fgraphql.anilist.co
+- type: Pricing
+  url: https://docs.anilist.co/guide/terms-of-use#commercial-usage
+  data:
+  - name: Free
+    description: Free for non-commercial usage and for commercial use under $150 of revenue per month.
+  - name: Commercial
+    description: Applications or services generating more than $150/month in revenue require a commercial license; contact contact@anilist.co.
+- type: TermsOfService
+  url: https://docs.anilist.co/guide/terms-of-use
+- type: PrivacyPolicy
+  url: https://anilist.co/terms
+- type: GitHubOrganization
+  url: https://github.com/AniList
+- type: GitHubRepository
+  url: https://github.com/AniList/docs
+- type: Support
+  url: mailto:contact@anilist.co
+- type: Contact
+  url: mailto:contact@anilist.co
+- type: Blog
+  url: https://anistaff.medium.com/
+- type: X
+  url: https://x.com/AniListco
+- type: SDK
+  url: https://github.com/topics/anilist
+  data:
+  - name: Community SDKs
+    description: AniList does not publish official SDKs. Community libraries exist for JavaScript/TypeScript, PHP, Python, Rust, Kotlin, Swift, Dart, and more — many discoverable via the `anilist` GitHub topic. The official docs include code snippets for JavaScript, PHP, Python, and Rust.
+- type: CodeExamples
+  url: https://github.com/AniList/docs/tree/main/docs/guide/snippets
+- type: Tools
+  title: Community MCP Server (yuna0x0/anilist-mcp)
+  url: https://github.com/yuna0x0/anilist-mcp
+- type: PublicAPIsListing
+  url: https://github.com/public-apis/public-apis
+- type: Features
+  data:
+  - name: Comprehensive Media Catalog
+    description: 500,000+ anime and manga entries with rich metadata including titles, formats, statuses, episodes, chapters, durations, genres, tags, scores, popularity, trends, external links, and relations.
+  - name: Character & Staff Database
+    description: Searchable directories of characters and staff with relationships, voice actors, role credits, and birthday filters.
+  - name: Studio Directory
+    description: Catalog of anime studios with associated media production credits.
+  - name: User Lists & Social Graph
+    description: MediaList / MediaListCollection queries and mutations let apps read and write a user's anime/manga lists, custom lists, follows, favourites, likes, and activity feed.
+  - name: Activity, Reviews, Recommendations, Threads
+    description: Read and write social activity (text/message/list), reviews, recommendations, forum threads, and thread comments.
+  - name: Notifications
+    description: Per-user notification stream with type filtering and unread-count reset.
+  - name: Airing Schedule & Trends
+    description: AiringSchedule queries for upcoming episode airings; MediaTrend queries for time-series popularity and score trends.
+  - name: Site Statistics
+    description: Aggregate site statistics across users, anime, and manga.
+  - name: AniChart Integration
+    description: AniChartUser settings and highlights for the AniChart seasonal anime chart.
+  - name: Pagination via Page Type
+    description: All list-returning queries are wrapped in a Page object with pageInfo (currentPage, lastPage, total, hasNextPage) for cursor-less pagination.
+  - name: Server-side Markdown Rendering
+    description: Markdown query converts AniList-flavored markdown to HTML (auth required).
+- type: UseCases
+  data:
+  - name: Anime/Manga Discovery Apps
+    description: Browse and search the catalog by season, format, genre, tag, popularity, score, source, country of origin, and free-text query.
+  - name: Personal Tracker & List Sync
+    description: Authenticated apps can read and write a user's watching/reading/completed/paused/dropped/planning lists, custom lists, scores, and progress.
+  - name: Airing Calendar / Notification Bots
+    description: Discord, Telegram, and web bots that surface upcoming episode airings, season schedules, and per-user notifications.
+  - name: Social & Community Frontends
+    description: Alternative frontends that render activity feeds, reviews, recommendations, and forum threads.
+  - name: Recommendation Engines
+    description: Build recommendation systems using user list data, scoring, genres, tags, and the built-in Recommendation graph.
+  - name: Data Visualization & Analytics
+    description: Trend dashboards, AniChart-style seasonal charts, and statistics visualizations built on MediaTrend and SiteStatistics queries.
+  - name: GraphQL Codegen / Typed Clients
+    description: Generate strongly typed clients in TypeScript, Rust, Kotlin, Swift, Dart, and others against the public schema for editor-completion and compile-time safety.
+- type: Integrations
+  data:
+  - name: MyAnimeList
+    description: Media entries carry an `idMal` field cross-referencing MyAnimeList's canonical ID.
+  - name: External Link Sources
+    description: ExternalLinkSourceCollection exposes streaming, reading, social, and information sites linked from media entries (Crunchyroll, Funimation, Netflix, Hulu, VIZ, Comixology, Wikipedia, official sites, etc.).
+  - name: AniChart
+    description: AniChart.net seasonal anime chart is powered by the same API; AniChartUser settings are mutable through the API.
+  - name: Discord
+    description: Official AniList Discord server provides API status and community support; the AniList org publishes a Discord search bot.
+  - name: Apollo Studio
+    description: AniList exposes its schema through Apollo Studio's hosted sandbox explorer for interactive query authoring.
+- type: Solutions
+  data:
+  - name: Non-commercial / Hobby
+    description: Free use, subject to terms (no data hoarding, no backup/storage abuse, no competing tracker without sustained AniList sync).
+  - name: Commercial under $150/mo
+    description: Free for commercial applications generating less than $150 in monthly revenue, no permission required.
+  - name: Commercial over $150/mo
+    description: Requires a commercial license arranged via contact@anilist.co.
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
