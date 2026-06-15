@@ -1,0 +1,15 @@
+{
+  "repo": "anilist",
+  "feeds": [
+    {
+      "source": "https://anistaff.medium.com/",
+      "feed_url": "https://anistaff.medium.com/feed",
+      "title": "",
+      "saved": 0,
+      "method": "none",
+      "error": "HTTP 404"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-06-07T00:00:00Z"
+}

@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AniList GraphQL API v2",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "GraphQL",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Execute a GraphQL query or mutation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graphql.anilist.co/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Execute a GraphQL query or mutation against the AniList schema. The request body must include a `query` string and may include a `variables` object and an `operationName`. Queries may be made anonymously; mutations require a Bearer access token obtained via OAuth2."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "OAuth2",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Begin the OAuth2 authorization flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graphql.anilist.co/api/v2/oauth/authorize",
+            "params": [
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query",
+                "description": "The client ID of the developer application"
+              },
+              {
+                "name": "redirect_uri",
+                "value": "",
+                "type": "query",
+                "description": "Registered redirect URI for the application"
+              },
+              {
+                "name": "response_type",
+                "value": "",
+                "type": "query",
+                "description": "`code` for Authorization Code Grant, `token` for Implicit Grant"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "Opaque value the client can use to maintain state between request and callback"
+              }
+            ]
+          },
+          "docs": "Redirect a user to this endpoint to begin the OAuth2 Authorization Code or Implicit grant flow. The redirect URI must exactly match the URI configured on the developer application."
+        },
+        {
+          "info": {
+            "name": "Exchange an authorization code for an access token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graphql.anilist.co/api/v2/oauth/token",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Exchange an authorization code obtained from the authorize endpoint for an OAuth2 access token. AniList access tokens are JWTs valid for one year; refresh tokens are not supported."
+        },
+        {
+          "info": {
+            "name": "Display the OAuth2 auth pin for manual entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graphql.anilist.co/api/v2/oauth/pin"
+          },
+          "docs": "Auth Pin redirect that displays an access token on a page for the user to copy and paste into a client application. Useful for clients that cannot register an HTTP or custom URI scheme redirect. Supports both Authorization Code and Implicit flows."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

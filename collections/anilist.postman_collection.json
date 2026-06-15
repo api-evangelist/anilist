@@ -1,0 +1,889 @@
+{
+  "item": [
+    {
+      "id": "c5f00b3d-6b29-41eb-b016-7e0becd2cdf9",
+      "name": "GraphQL",
+      "description": {
+        "content": "GraphQL query and mutation endpoint",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dc1dd060-1b75-4d2d-97be-121716527987",
+          "name": "Execute a GraphQL query or mutation",
+          "request": {
+            "name": "Execute a GraphQL query or mutation",
+            "description": {
+              "content": "Execute a GraphQL query or mutation against the AniList schema. The request body must include a `query` string and may include a `variables` object and an `operationName`. Queries may be made anonymously; mutations require a Bearer access token obtained via OAuth2.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                ""
+              ],
+              "host": [
+                "graphql",
+                "anilist",
+                "co"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "noauth"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": {\n    \"key_0\": \"string\"\n  },\n  \"operationName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "67e94d54-7d72-4cda-b6f4-ef8805f85714",
+              "name": "A successful GraphQL response (may still contain an `errors` array)",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"query ($id: Int) { Media(id: $id) { id title { romaji english native } episodes status } }\\n\",\n  \"variables\": {\n    \"id\": 15125\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Per-IP/user request budget per minute (90, currently degraded to 30)",
+                  "key": "X-RateLimit-Limit",
+                  "value": "5441"
+                },
+                {
+                  "disabled": false,
+                  "description": "Remaining requests in the current rate-limit window",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "5441"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"Media\": {\n      \"id\": 15125,\n      \"title\": {\n        \"romaji\": \"Teekyuu\",\n        \"english\": \"Teekyuu\",\n        \"native\": \"てーきゅう\"\n      },\n      \"episodes\": 12,\n      \"status\": \"FINISHED\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "55a80312-6c83-4513-99dc-5ecc937f4234",
+              "name": "Malformed GraphQL document",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"query ($id: Int) { Media(id: $id) { id title { romaji english native } episodes status } }\\n\",\n  \"variables\": {\n    \"id\": 15125\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"key_0\": 1475.2555034209392\n  },\n  \"errors\": [\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 1781,\n          \"column\": 5884\n        },\n        {\n          \"line\": 9615,\n          \"column\": 3969\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 2969,\n          \"column\": 2374\n        },\n        {\n          \"line\": 2190,\n          \"column\": 7568\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"extensions\": {\n    \"key_0\": 6039,\n    \"key_1\": 9766\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cfbb6d42-ae6d-4d57-9117-efb4790b1045",
+              "name": "Missing or invalid access token for a mutation requiring auth",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"query ($id: Int) { Media(id: $id) { id title { romaji english native } episodes status } }\\n\",\n  \"variables\": {\n    \"id\": 15125\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"key_0\": true,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"errors\": [\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 5214,\n          \"column\": 6975\n        },\n        {\n          \"line\": 9075,\n          \"column\": 9180\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 4733,\n          \"column\": 6329\n        },\n        {\n          \"line\": 4984,\n          \"column\": 5805\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"extensions\": {\n    \"key_0\": 2922.1244250866584\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8fc28c9-1a39-4e5a-848a-7a18d7404915",
+              "name": "API temporarily disabled or IP blocked",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"query ($id: Int) { Media(id: $id) { id title { romaji english native } episodes status } }\\n\",\n  \"variables\": {\n    \"id\": 15125\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"key_0\": true,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"errors\": [\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 5214,\n          \"column\": 6975\n        },\n        {\n          \"line\": 9075,\n          \"column\": 9180\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 4733,\n          \"column\": 6329\n        },\n        {\n          \"line\": 4984,\n          \"column\": 5805\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"extensions\": {\n    \"key_0\": 2922.1244250866584\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "464c5003-067b-49c2-8284-3667698a4145",
+              "name": "Rate limit exceeded; one-minute timeout applied",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"query ($id: Int) { Media(id: $id) { id title { romaji english native } episodes status } }\\n\",\n  \"variables\": {\n    \"id\": 15125\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Seconds to wait before retrying",
+                  "key": "Retry-After",
+                  "value": "5441"
+                },
+                {
+                  "disabled": false,
+                  "key": "X-RateLimit-Limit",
+                  "value": "5441",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-RateLimit-Remaining",
+                  "value": "5441",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "description": "Unix timestamp of next allowed request",
+                  "key": "X-RateLimit-Reset",
+                  "value": "5441"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": null,\n  \"errors\": [\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a4e8b0a7-9b20-4fdd-a7f1-cdc8a7687288",
+      "name": "OAuth2",
+      "description": {
+        "content": "OAuth2 authorization code and implicit grant endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4ed650a9-b90a-419d-a148-a6a42bde5b33",
+          "name": "Begin the OAuth2 authorization flow",
+          "request": {
+            "name": "Begin the OAuth2 authorization flow",
+            "description": {
+              "content": "Redirect a user to this endpoint to begin the OAuth2 Authorization Code or Implicit grant flow. The redirect URI must exactly match the URI configured on the developer application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "v2",
+                "oauth",
+                "authorize"
+              ],
+              "host": [
+                "anilist",
+                "co"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<string>",
+                  "description": "(Required) The client ID of the developer application"
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uri",
+                  "value": "<uri>",
+                  "description": "(Required) Registered redirect URI for the application"
+                },
+                {
+                  "disabled": false,
+                  "key": "response_type",
+                  "value": "<string>",
+                  "description": "(Required) `code` for Authorization Code Grant, `token` for Implicit Grant"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "Opaque value the client can use to maintain state between request and callback"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5ecf73e0-c26b-4e04-bad5-798413f449cc",
+              "name": "Redirects to the configured redirect_uri with `code` (Authorization Code) or `#access_token` fragment (Implicit)",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "v2",
+                    "oauth",
+                    "authorize"
+                  ],
+                  "host": [
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [
+                    {
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "redirect_uri",
+                      "value": "<uri>"
+                    },
+                    {
+                      "key": "response_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Found",
+              "code": 302,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a20291c2-e6d7-49b6-a174-17bc2e515df6",
+          "name": "Exchange an authorization code for an access token",
+          "request": {
+            "name": "Exchange an authorization code for an access token",
+            "description": {
+              "content": "Exchange an authorization code obtained from the authorize endpoint for an OAuth2 access token. AniList access tokens are JWTs valid for one year; refresh tokens are not supported.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "v2",
+                "oauth",
+                "token"
+              ],
+              "host": [
+                "anilist",
+                "co"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "client_secret",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uri",
+                  "value": "<uri>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>",
+                  "description": "(Required) Authorization code received from the redirect"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f87d24b2-5428-4d5f-9de5-59c4a62dd79a",
+              "name": "Token successfully issued",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "v2",
+                    "oauth",
+                    "token"
+                  ],
+                  "host": [
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "authorization_code"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uri",
+                      "value": "<uri>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Authorization code received from the redirect",
+                        "type": "text/plain"
+                      },
+                      "key": "code",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"token_type\": \"Bearer\",\n  \"expires_in\": 31536000,\n  \"access_token\": \"string\",\n  \"refresh_token\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e9a2d62d-5296-4a39-ba8d-40b2b6b717f4",
+              "name": "Invalid grant, client credentials, or redirect URI",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "v2",
+                    "oauth",
+                    "token"
+                  ],
+                  "host": [
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "authorization_code"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uri",
+                      "value": "<uri>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Authorization code received from the redirect",
+                        "type": "text/plain"
+                      },
+                      "key": "code",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b1a09e18-36a7-4ea4-9528-48473098ed30",
+              "name": "Invalid client credentials",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "v2",
+                    "oauth",
+                    "token"
+                  ],
+                  "host": [
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "authorization_code"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uri",
+                      "value": "<uri>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Authorization code received from the redirect",
+                        "type": "text/plain"
+                      },
+                      "key": "code",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36306125-490d-473c-a18b-418bc8464ac1",
+          "name": "Display the OAuth2 auth pin for manual entry",
+          "request": {
+            "name": "Display the OAuth2 auth pin for manual entry",
+            "description": {
+              "content": "Auth Pin redirect that displays an access token on a page for the user to copy and paste into a client application. Useful for clients that cannot register an HTTP or custom URI scheme redirect. Supports both Authorization Code and Implicit flows.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "v2",
+                "oauth",
+                "pin"
+              ],
+              "host": [
+                "anilist",
+                "co"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/html"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be8db6b3-e21a-4d26-aa4b-9235f710446c",
+              "name": "HTML page displaying the access token",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "v2",
+                    "oauth",
+                    "pin"
+                  ],
+                  "host": [
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/html"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/html"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graphql.anilist.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "9ad32f08-020c-40fc-874f-a302d3f8418a",
+    "name": "AniList GraphQL API v2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP surface of the AniList API v2. The primary developer interface is a single GraphQL endpoint at https://graphql.anilist.co. OAuth2 authentication uses the Authorization Code and Implicit grant flows at https://anilist.co. This OpenAPI document captures the HTTP layer: the GraphQL POST endpoint, the OAuth2 authorize endpoint, the token exchange endpoint, and the auth pin redirect. The full GraphQL schema is profiled separately in `graphql/anilist-schema.graphql` (SDL) and `graphql/anilist-introspection.json` (introspection).\n\nContact Support:\n Name: AniList Support\n Email: contact@anilist.co",
+      "type": "text/plain"
+    }
+  }
+}
