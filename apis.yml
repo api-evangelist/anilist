@@ -65,7 +65,7 @@ apis:
     url: https://docs.anilist.co/
   - type: GettingStarted
     url: https://docs.anilist.co/guide/introduction
-  - type: Quickstart
+  - type: GettingStarted
     url: https://docs.anilist.co/guide/graphql/
   - type: APIReference
     url: https://docs.anilist.co/reference/
@@ -82,7 +82,7 @@ apis:
     url: https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fgraphql.anilist.co
   - type: Console
     url: https://anilist.co/settings/developer
-  - type: Errors
+  - type: ErrorCodes
     url: https://docs.anilist.co/guide/graphql/errors
   - url: graphql/anilist-graphql.md
     type: GraphQL
@@ -95,11 +95,11 @@ common:
   url: https://docs.anilist.co/reference/
 - type: GettingStarted
   url: https://docs.anilist.co/guide/introduction
-- type: Quickstart
+- type: GettingStarted
   url: https://docs.anilist.co/guide/graphql/
 - type: Authentication
   url: https://docs.anilist.co/guide/auth/
-- type: SignUp
+- type: Signup
   url: https://anilist.co/signup
 - type: Login
   url: https://anilist.co/login
@@ -132,7 +132,7 @@ common:
   url: https://anistaff.medium.com/
 - type: X
   url: https://x.com/AniListco
-- type: SDK
+- type: SDKs
   url: https://github.com/topics/anilist
   data:
   - name: Community SDKs
