@@ -1,0 +1,32 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/anilist-openapi.yml
+summary:
+  types:
+  - http
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  - implicit
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  description: OAuth2 access token issued by AniList. No scopes; access tokens grant (almost)
+    full access to a user's data. Tokens are valid for one year.
+  sources:
+  - openapi/anilist-openapi.yml
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://anilist.co/api/v2/oauth/authorize
+    tokenUrl: https://anilist.co/api/v2/oauth/token
+    scopes: 0
+  - flow: implicit
+    authorizationUrl: https://anilist.co/api/v2/oauth/authorize
+    scopes: 0
+  description: AniList OAuth2 (no scopes supported)
+  sources:
+  - openapi/anilist-openapi.yml

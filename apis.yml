@@ -87,6 +87,10 @@ apis:
   - url: graphql/anilist-graphql.md
     type: GraphQL
 common:
+- type: DomainSecurity
+  url: security/anilist-domain-security.yml
+- type: Authentication
+  url: authentication/anilist-authentication.yml
 - type: OAuthScopes
   url: scopes/anilist-scopes.yml
 - type: Website
