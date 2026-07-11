@@ -87,6 +87,8 @@ apis:
   - url: graphql/anilist-graphql.md
     type: GraphQL
 common:
+- type: OAuthScopes
+  url: scopes/anilist-scopes.yml
 - type: Website
   url: https://anilist.co/
 - type: Documentation

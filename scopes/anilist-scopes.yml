@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/anilist-openapi.yml
+docs: https://docs.anilist.co/guide/auth/
+note: AniList's OAuth2 does not use scopes — the auth docs state "Scopes are not
+  supported. Access tokens provide (almost) full access to a user's data"
+  (https://docs.anilist.co/guide/auth/).
+schemes:
+- name: oauth2
+  source: openapi/anilist-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://anilist.co/api/v2/oauth/authorize
+    tokenUrl: https://anilist.co/api/v2/oauth/token
+  - flow: implicit
+    authorizationUrl: https://anilist.co/api/v2/oauth/authorize
+  description: AniList OAuth2 (no scopes supported)
+scopes: []
