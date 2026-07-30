@@ -10,6 +10,18 @@ description: >-
 url: https://docs.anilist.co/
 baseURL: https://graphql.anilist.co
 humanURL: https://docs.anilist.co/
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://anilist.co/img/icons/icon.svg
 specificationVersion: '0.20'
 created: '2026-05-28'
@@ -31,27 +43,19 @@ tags:
 apis:
 - name: AniList GraphQL API v2
   description: >-
-    The AniList GraphQL API v2 is the primary public developer interface for
-    AniList.co. It exposes anime, manga, character, staff, studio, user,
-    activity, review, recommendation, thread, comment, notification, and
-    airing schedule data through a single endpoint at
-    https://graphql.anilist.co. All requests are POSTs carrying a query and
-    optional variables payload. Mutations require an OAuth2 access token.
-    The schema includes 25+ root Query fields (Page, Media, MediaTrend,
-    AiringSchedule, Character, Staff, MediaList, MediaListCollection,
-    GenreCollection, MediaTagCollection, User, Viewer, Notification,
-    Studio, Review, Activity, ActivityReply, Following, Follower, Thread,
-    ThreadComment, Recommendation, Like, Markdown, AniChartUser,
-    SiteStatistics, ExternalLinkSourceCollection) and 30+ root Mutation
-    fields (UpdateUser, SaveMediaListEntry, UpdateMediaListEntries,
-    DeleteMediaListEntry, DeleteCustomList, SaveTextActivity,
-    SaveMessageActivity, SaveListActivity, DeleteActivity,
-    ToggleActivityPin, ToggleActivitySubscription, SaveActivityReply,
-    DeleteActivityReply, ToggleLike, ToggleLikeV2, ToggleFollow,
-    ToggleFavourite, UpdateFavouriteOrder, SaveReview, DeleteReview,
-    RateReview, SaveRecommendation, SaveThread, DeleteThread,
-    ToggleThreadSubscription, SaveThreadComment, DeleteThreadComment,
-    UpdateAniChartSettings, UpdateAniChartHighlights).
+    The AniList GraphQL API v2 is the primary public developer interface for AniList.co. It exposes anime,
+    manga, character, staff, studio, user, activity, review, recommendation, thread, comment, notification,
+    and airing schedule data through a single endpoint at https://graphql.anilist.co. All requests are
+    POSTs carrying a query and optional variables payload. Mutations require an OAuth2 access token. The
+    schema includes 25+ root Query fields (Page, Media, MediaTrend, AiringSchedule, Character, Staff,
+    MediaList, MediaListCollection, GenreCollection, MediaTagCollection, User, Viewer, Notification, Studio,
+    Review, Activity, ActivityReply, Following, Follower, Thread, ThreadComment, Recommendation, Like,
+    Markdown, AniChartUser, SiteStatistics, ExternalLinkSourceCollection) and 30+ root Mutation fields
+    (UpdateUser, SaveMediaListEntry, UpdateMediaListEntries, DeleteMediaListEntry, DeleteCustomList, SaveTextActivity,
+    SaveMessageActivity, SaveListActivity, DeleteActivity, ToggleActivityPin, ToggleActivitySubscription,
+    SaveActivityReply, DeleteActivityReply, ToggleLike, ToggleLikeV2, ToggleFollow, ToggleFavourite, UpdateFavouriteOrder,
+    SaveReview, DeleteReview, RateReview, SaveRecommendation, SaveThread, DeleteThread, ToggleThreadSubscription,
+    SaveThreadComment, DeleteThreadComment, UpdateAniChartSettings, UpdateAniChartHighlights).
   humanURL: https://docs.anilist.co/
   baseURL: https://graphql.anilist.co
   tags:
@@ -75,17 +79,41 @@ apis:
     url: https://docs.anilist.co/guide/rate-limiting
     data:
     - name: Default per-IP/user rate limit
-      description: 90 requests per minute under normal conditions; currently degraded to 30 requests per minute. X-RateLimit-Limit and X-RateLimit-Remaining headers are returned. Exceeding the limit returns HTTP 429 with Retry-After and X-RateLimit-Reset headers and a GraphQL "Too Many Requests." error.
+      description: >-
+        90 requests per minute under normal conditions; currently degraded to 30 requests per minute.
+        X-RateLimit-Limit and X-RateLimit-Remaining headers are returned. Exceeding the limit returns
+        HTTP 429 with Retry-After and X-RateLimit-Reset headers and a GraphQL "Too Many Requests." error.
     - name: Burst limiter
       description: An additional burst limiter throttles bursts of requests over very short windows.
   - type: Sandbox
-    url: https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fgraphql.anilist.co
+    url: >-
+      https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fgraphql.anilist.co
   - type: Console
     url: https://anilist.co/settings/developer
   - type: ErrorCodes
     url: https://docs.anilist.co/guide/graphql/errors
   - url: graphql/anilist-graphql.md
     type: GraphQL
+- aid: anilist:anilist-graphql-api
+  name: AniList GraphQL API
+  description: GraphQL query and mutation endpoint
+  humanURL: https://docs.anilist.co/
+  baseURL: https://graphql.anilist.co
+  tags:
+  - GraphQL
+  properties:
+  - type: OpenAPI
+    url: openapi/anilist-graphql-api-openapi.yml
+- aid: anilist:anilist-oauth2-api
+  name: AniList OAuth2 API
+  description: OAuth2 authorization code and implicit grant endpoints
+  humanURL: https://docs.anilist.co/
+  baseURL: https://graphql.anilist.co
+  tags:
+  - OAuth2
+  properties:
+  - type: OpenAPI
+    url: openapi/anilist-oauth2-api-openapi.yml
 common:
 - type: AgenticAccess
   url: agentic-access/anilist-agentic-access.yml
