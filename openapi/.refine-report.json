@@ -1,0 +1,16 @@
+{
+  "provider": "anilist",
+  "sources": [
+    "anilist-graphql-api-openapi.yml",
+    "anilist-oauth2-api-openapi.yml"
+  ],
+  "outputs": [
+    "anilist-graphql-api-openapi.yml",
+    "anilist-oauth2-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
