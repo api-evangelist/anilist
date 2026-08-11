@@ -115,6 +115,8 @@ apis:
   - type: OpenAPI
     url: openapi/anilist-oauth2-api-openapi.yml
 common:
+- type: Releases
+  url: https://github.com/AniList/docs/releases
 - type: AgenticAccess
   url: agentic-access/anilist-agentic-access.yml
 - type: DomainSecurity
