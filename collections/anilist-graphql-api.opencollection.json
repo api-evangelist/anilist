@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AniList API v2 GraphQL API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "GraphQL",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Execute a GraphQL query or mutation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graphql.anilist.co/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Execute a GraphQL query or mutation against the AniList schema. The request body must include a `query` string and may include a `variables` object and an `operationName`. Queries may be made anonymously; mutations require a Bearer access token obtained via OAuth2."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

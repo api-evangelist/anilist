@@ -1,0 +1,354 @@
+{
+  "item": [
+    {
+      "id": "4cfa95a2-0bbc-4ae6-a903-1123f5279592",
+      "name": "GraphQL",
+      "description": {
+        "content": "GraphQL query and mutation endpoint",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1db8281f-a6b2-47be-8eb3-2723666e890f",
+          "name": "Execute a GraphQL query or mutation",
+          "request": {
+            "name": "Execute a GraphQL query or mutation",
+            "description": {
+              "content": "Execute a GraphQL query or mutation against the AniList schema. The request body must include a `query` string and may include a `variables` object and an `operationName`. Queries may be made anonymously; mutations require a Bearer access token obtained via OAuth2.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                ""
+              ],
+              "host": [
+                "graphql",
+                "anilist",
+                "co"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "noauth"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": {\n    \"key_0\": \"string\"\n  },\n  \"operationName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4f869bd9-59b1-4c4c-a2d8-44d5e4d1accd",
+              "name": "A successful GraphQL response (may still contain an `errors` array)",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"query ($id: Int) { Media(id: $id) { id title { romaji english native } episodes status } }\\n\",\n  \"variables\": {\n    \"id\": 15125\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Per-IP/user request budget per minute (90, currently degraded to 30)",
+                  "key": "X-RateLimit-Limit",
+                  "value": "386"
+                },
+                {
+                  "disabled": false,
+                  "description": "Remaining requests in the current rate-limit window",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "386"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"Media\": {\n      \"id\": 15125,\n      \"title\": {\n        \"romaji\": \"Teekyuu\",\n        \"english\": \"Teekyuu\",\n        \"native\": \"てーきゅう\"\n      },\n      \"episodes\": 12,\n      \"status\": \"FINISHED\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0dbf10ac-ebc7-47fe-b49a-b630e08fc88f",
+              "name": "Malformed GraphQL document",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"query ($id: Int) { Media(id: $id) { id title { romaji english native } episodes status } }\\n\",\n  \"variables\": {\n    \"id\": 15125\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": 914.1706996373156\n  },\n  \"errors\": [\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 1047,\n          \"column\": 9364\n        },\n        {\n          \"line\": 2179,\n          \"column\": 8304\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 9923,\n          \"column\": 8686\n        },\n        {\n          \"line\": 6737,\n          \"column\": 1848\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"extensions\": {\n    \"key_0\": \"string\",\n    \"key_1\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "096d9aca-898e-48bf-a617-37b959868852",
+              "name": "Missing or invalid access token for a mutation requiring auth",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"query ($id: Int) { Media(id: $id) { id title { romaji english native } episodes status } }\\n\",\n  \"variables\": {\n    \"id\": 15125\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"key_0\": 3230,\n    \"key_1\": 187.55456545204717\n  },\n  \"errors\": [\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 3868,\n          \"column\": 330\n        },\n        {\n          \"line\": 3830,\n          \"column\": 968\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 4139,\n          \"column\": 8554\n        },\n        {\n          \"line\": 7133,\n          \"column\": 9856\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"extensions\": {\n    \"key_0\": 9599.646438127314,\n    \"key_1\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68b93ef1-8e4b-4d97-a3fb-3b35c7e5f88d",
+              "name": "API temporarily disabled or IP blocked",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"query ($id: Int) { Media(id: $id) { id title { romaji english native } episodes status } }\\n\",\n  \"variables\": {\n    \"id\": 15125\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"key_0\": 3230,\n    \"key_1\": 187.55456545204717\n  },\n  \"errors\": [\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 3868,\n          \"column\": 330\n        },\n        {\n          \"line\": 3830,\n          \"column\": 968\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429,\n      \"locations\": [\n        {\n          \"line\": 4139,\n          \"column\": 8554\n        },\n        {\n          \"line\": 7133,\n          \"column\": 9856\n        }\n      ],\n      \"path\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"extensions\": {\n    \"key_0\": 9599.646438127314,\n    \"key_1\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c17bf9dd-9720-4abe-a278-a5fedd374b1e",
+              "name": "Rate limit exceeded; one-minute timeout applied",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"query ($id: Int) { Media(id: $id) { id title { romaji english native } episodes status } }\\n\",\n  \"variables\": {\n    \"id\": 15125\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Seconds to wait before retrying",
+                  "key": "Retry-After",
+                  "value": "386"
+                },
+                {
+                  "disabled": false,
+                  "key": "X-RateLimit-Limit",
+                  "value": "386",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-RateLimit-Remaining",
+                  "value": "386",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "description": "Unix timestamp of next allowed request",
+                  "key": "X-RateLimit-Reset",
+                  "value": "386"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": null,\n  \"errors\": [\n    {\n      \"message\": \"Too Many Requests.\",\n      \"status\": 429\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graphql.anilist.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "419ec5d1-768f-440f-a370-e1dc07f3d8cb",
+    "name": "AniList API v2 GraphQL API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP surface of the AniList API v2. The primary developer interface is a single GraphQL endpoint at https://graphql.anilist.co. OAuth2 authentication uses the Authorization Code and Implicit grant flows at https://anilist.co. This OpenAPI document captures the HTTP layer: the GraphQL POST endpoint, the OAuth2 authorize endpoint, the token exchange endpoint, and the auth pin redirect. The full GraphQL schema is profiled separately in `graphql/anilist-schema.graphql` (SDL) and `graphql/anilist-introspection.json` (introspection).\n\nContact Support:\n Name: AniList Support\n Email: contact@anilist.co",
+      "type": "text/plain"
+    }
+  }
+}
