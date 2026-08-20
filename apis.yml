@@ -38,6 +38,16 @@ tags:
 - Social
 - Database
 - GraphQL
+- Authentication
+- Public APIs
+tags_raw:
+- Anime
+- Manga
+- Entertainment
+- Media
+- Social
+- Database
+- GraphQL
 - OAuth2
 - Public APIs
 apis:
@@ -110,6 +120,8 @@ apis:
   humanURL: https://docs.anilist.co/
   baseURL: https://graphql.anilist.co
   tags:
+  - Authentication
+  tags_raw:
   - OAuth2
   properties:
   - type: OpenAPI
