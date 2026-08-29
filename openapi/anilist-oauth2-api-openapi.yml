@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: AniList API v2 GraphQL OAuth2 API
+  title: AniList API v2 GraphQL O Auth2 API
   version: 2.0.0
   description: 'HTTP surface of the AniList API v2. The primary developer interface is a single GraphQL endpoint at https://graphql.anilist.co. OAuth2 authentication uses the Authorization Code and Implicit grant flows at https://anilist.co. This OpenAPI document captures the HTTP layer: the GraphQL POST endpoint, the OAuth2 authorize endpoint, the token exchange endpoint, and the auth pin redirect. The full GraphQL schema is profiled separately in `graphql/anilist-schema.graphql` (SDL) and `graphql/anilist-introspection.json` (introspection).'
   termsOfService: https://docs.anilist.co/guide/terms-of-use
@@ -123,24 +123,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    TokenResponse:
-      title: TokenResponse
-      type: object
-      properties:
-        token_type:
-          type: string
-          example: Bearer
-        expires_in:
-          type: integer
-          description: Token lifetime in seconds (1 year)
-          example: 31536000
-        access_token:
-          type: string
-          description: JWT access token
-        refresh_token:
-          type: string
-          nullable: true
-          description: AniList does not currently support refresh tokens
     TokenRequest:
       title: TokenRequest
       type: object
@@ -166,6 +148,25 @@ components:
         code:
           type: string
           description: Authorization code received from the redirect
+    TokenResponse:
+      title: TokenResponse
+      type: object
+      properties:
+        token_type:
+          type: string
+          example: Bearer
+        expires_in:
+          type: integer
+          description: Token lifetime in seconds (1 year)
+          example: 31536000
+        access_token:
+          type: string
+          description: JWT access token
+        refresh_token:
+          type:
+          - string
+          - 'null'
+          description: AniList does not currently support refresh tokens
   securitySchemes:
     bearerAuth:
       type: http
