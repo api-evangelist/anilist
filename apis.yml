@@ -117,28 +117,26 @@ apis:
     url: https://docs.anilist.co/guide/graphql/errors
   - url: graphql/anilist-graphql.md
     type: GraphQL
-- aid: anilist:anilist-graphql-api
-  name: AniList GraphQL API
-  description: GraphQL query and mutation endpoint
-  humanURL: https://docs.anilist.co/
-  baseURL: https://graphql.anilist.co
-  tags:
-  - GraphQL
-  properties:
-  - type: OpenAPI
-    url: openapi/anilist-graphql-api-openapi.yml
 - aid: anilist:anilist-oauth2-api
-  name: AniList OAuth2 API
+  name: AniList O Auth2 API
   description: OAuth2 authorization code and implicit grant endpoints
   humanURL: https://docs.anilist.co/
   baseURL: https://graphql.anilist.co
   tags:
-  - Authentication
-  tags_raw:
   - OAuth2
   properties:
   - type: OpenAPI
     url: openapi/anilist-oauth2-api-openapi.yml
+- aid: anilist:anilist-graph-ql-api
+  name: AniList Graph QL API
+  description: GraphQL query and mutation endpoint
+  humanURL: https://docs.anilist.co/
+  baseURL: https://graphql.anilist.co
+  tags:
+  - Graph QL
+  properties:
+  - type: OpenAPI
+    url: openapi/anilist-graph-ql-api-openapi.yml
 common:
 - type: Releases
   url: https://github.com/AniList/docs/releases
