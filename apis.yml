@@ -43,6 +43,9 @@ x-source: public-apis/public-apis
 x-category: Anime
 x-tier: 3
 x-tier-reason: bulk-registered-from-public-apis
+x-docs-platform: vitepress
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-18
 tags:
 - Anime
 - Manga
