@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   title: AniList API v2 Graph QL API
   version: 2.0.0
-  description: 'HTTP surface of the AniList API v2. The primary developer interface is a single GraphQL endpoint at https://graphql.anilist.co. OAuth2 authentication uses the Authorization Code and Implicit grant flows at https://anilist.co. This OpenAPI document captures the HTTP layer: the GraphQL POST endpoint, the OAuth2 authorize endpoint, the token exchange endpoint, and the auth pin redirect. The full GraphQL schema is profiled separately in `graphql/anilist-schema.graphql` (SDL) and `graphql/anilist-introspection.json` (introspection).'
+  description: HTTP surface of the AniList API v2.
   termsOfService: https://docs.anilist.co/guide/terms-of-use
   contact:
     name: AniList Support
@@ -23,7 +23,7 @@ security:
 - {}
 - bearerAuth: []
 tags:
-- name: GraphQL
+- name: Graph QL
   description: GraphQL query and mutation endpoint
 paths:
   /:
@@ -32,7 +32,7 @@ paths:
       summary: Execute a GraphQL query or mutation
       description: Execute a GraphQL query or mutation against the AniList schema. The request body must include a `query` string and may include a `variables` object and an `operationName`. Queries may be made anonymously; mutations require a Bearer access token obtained via OAuth2.
       tags:
-      - GraphQL
+      - Graph QL
       servers:
       - url: https://graphql.anilist.co
       security:
@@ -144,6 +144,41 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    GraphQLRequest:
+      title: GraphQLRequest
+      type: object
+      required:
+      - query
+      properties:
+        query:
+          type: string
+          description: GraphQL query or mutation document
+          example: query { Viewer { id name } }
+        variables:
+          type: object
+          additionalProperties: true
+          description: Map of variable values referenced in the query
+        operationName:
+          type: string
+          description: Name of the operation to execute when the document contains multiple
+    GraphQLResponse:
+      title: GraphQLResponse
+      type: object
+      properties:
+        data:
+          type:
+          - object
+          - 'null'
+          additionalProperties: true
+          description: Selection result tree shaped like the requested query
+        errors:
+          type: array
+          description: Array of GraphQL errors when the request was not fully successful
+          items:
+            $ref: '#/components/schemas/GraphQLError'
+        extensions:
+          type: object
+          additionalProperties: true
     GraphQLError:
       title: GraphQLError
       type: object
@@ -169,41 +204,6 @@ components:
             oneOf:
             - type: string
             - type: integer
-    GraphQLResponse:
-      title: GraphQLResponse
-      type: object
-      properties:
-        data:
-          type:
-          - object
-          - 'null'
-          additionalProperties: true
-          description: Selection result tree shaped like the requested query
-        errors:
-          type: array
-          description: Array of GraphQL errors when the request was not fully successful
-          items:
-            $ref: '#/components/schemas/GraphQLError'
-        extensions:
-          type: object
-          additionalProperties: true
-    GraphQLRequest:
-      title: GraphQLRequest
-      type: object
-      required:
-      - query
-      properties:
-        query:
-          type: string
-          description: GraphQL query or mutation document
-          example: query { Viewer { id name } }
-        variables:
-          type: object
-          additionalProperties: true
-          description: Map of variable values referenced in the query
-        operationName:
-          type: string
-          description: Name of the operation to execute when the document contains multiple
   securitySchemes:
     bearerAuth:
       type: http
