@@ -8,18 +8,18 @@
     "anilist-oauth2-api-openapi.yml"
   ],
   "archived": [
-    "deleted 2 superseded output(s) from the previous generation"
+    "deleted 1 superseded output(s) from the previous generation"
   ],
   "errors": [],
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "anilist-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "superseded outputs removed: anilist-graph-ql-api-openapi.yml, anilist-o-auth2-api-openapi.yml",
-    "apis.yml register: written (+2 apis, 3 total)"
+    "superseded outputs removed: anilist-graph-ql-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 3 total)"
   ],
   "skipped": [
     "anilist-graph-ql-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "anilist-o-auth2-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+    "anilist-oauth2-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }
