@@ -141,8 +141,6 @@ apis:
   humanURL: https://docs.anilist.co/
   baseURL: https://graphql.anilist.co
   tags:
-  - GraphQL
-  tags_raw:
   - Graph QL
   properties:
   - type: OpenAPI
