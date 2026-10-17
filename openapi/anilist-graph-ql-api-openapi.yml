@@ -144,6 +144,24 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    GraphQLResponse:
+      title: GraphQLResponse
+      type: object
+      properties:
+        data:
+          type:
+          - object
+          - 'null'
+          additionalProperties: true
+          description: Selection result tree shaped like the requested query
+        errors:
+          type: array
+          description: Array of GraphQL errors when the request was not fully successful
+          items:
+            $ref: '#/components/schemas/GraphQLError'
+        extensions:
+          type: object
+          additionalProperties: true
     GraphQLRequest:
       title: GraphQLRequest
       type: object
@@ -186,24 +204,6 @@ components:
             oneOf:
             - type: string
             - type: integer
-    GraphQLResponse:
-      title: GraphQLResponse
-      type: object
-      properties:
-        data:
-          type:
-          - object
-          - 'null'
-          additionalProperties: true
-          description: Selection result tree shaped like the requested query
-        errors:
-          type: array
-          description: Array of GraphQL errors when the request was not fully successful
-          items:
-            $ref: '#/components/schemas/GraphQLError'
-        extensions:
-          type: object
-          additionalProperties: true
   securitySchemes:
     bearerAuth:
       type: http

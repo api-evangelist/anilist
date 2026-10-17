@@ -123,25 +123,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    TokenResponse:
-      title: TokenResponse
-      type: object
-      properties:
-        token_type:
-          type: string
-          example: Bearer
-        expires_in:
-          type: integer
-          description: Token lifetime in seconds (1 year)
-          example: 31536000
-        access_token:
-          type: string
-          description: JWT access token
-        refresh_token:
-          type:
-          - string
-          - 'null'
-          description: AniList does not currently support refresh tokens
     TokenRequest:
       title: TokenRequest
       type: object
@@ -167,6 +148,25 @@ components:
         code:
           type: string
           description: Authorization code received from the redirect
+    TokenResponse:
+      title: TokenResponse
+      type: object
+      properties:
+        token_type:
+          type: string
+          example: Bearer
+        expires_in:
+          type: integer
+          description: Token lifetime in seconds (1 year)
+          example: 31536000
+        access_token:
+          type: string
+          description: JWT access token
+        refresh_token:
+          type:
+          - string
+          - 'null'
+          description: AniList does not currently support refresh tokens
   securitySchemes:
     bearerAuth:
       type: http
