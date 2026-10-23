@@ -148,6 +148,8 @@ apis:
   - type: OpenAPI
     url: openapi/anilist-graph-ql-api-openapi.yml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/anilist/overview
 - url: https://anilist.co/blog/
   type: Blog
 - type: Releases
