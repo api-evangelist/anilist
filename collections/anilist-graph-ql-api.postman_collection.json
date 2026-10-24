@@ -1,0 +1,404 @@
+{
+  "info": {
+    "_postman_id": "97a1c55c-c10b-4a74-8d29-5c5767698856",
+    "name": "AniList API v2 GraphQL API",
+    "description": "HTTP surface of the AniList API v2.\n\nContact Support:\n Name: AniList Support\n Email: contact@anilist.co",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T01:13:02.000Z",
+    "updatedAt": "2026-10-22T01:13:02.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-97a1c55c-c10b-4a74-8d29-5c5767698856"
+  },
+  "item": [
+    {
+      "name": "/",
+      "item": [
+        {
+          "name": "Execute a GraphQL query or mutation",
+          "id": "5d97f9b0-c27e-4bf5-84a0-2e2447a79cb4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": {\n    \"Duisd72\": 129272.05485486984,\n    \"ad_1d\": 39640560\n  },\n  \"operationName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://graphql.anilist.co/",
+              "protocol": "https",
+              "host": [
+                "graphql",
+                "anilist",
+                "co"
+              ],
+              "path": [
+                ""
+              ]
+            },
+            "description": "Execute a GraphQL query or mutation against the AniList schema. The request body must include a `query` string and may include a `variables` object and an `operationName`. Queries may be made anonymously; mutations require a Bearer access token obtained via OAuth2."
+          },
+          "response": [
+            {
+              "id": "956defb3-ed16-4424-bd89-e3a52041034f",
+              "name": "A successful GraphQL response (may still contain an `errors` array)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": {\n    \"Duisd72\": 129272.05485486984,\n    \"ad_1d\": 39640560\n  },\n  \"operationName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://graphql.anilist.co/",
+                  "protocol": "https",
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Per-IP/user request budget per minute (90, currently degraded to 30)",
+                    "type": "text/plain"
+                  },
+                  "key": "X-RateLimit-Limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Remaining requests in the current rate-limit window",
+                    "type": "text/plain"
+                  },
+                  "key": "X-RateLimit-Remaining",
+                  "value": "<integer>"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": \"<object,null>\",\n  \"errors\": [\n    {\n      \"message\": \"<string>\",\n      \"status\": \"<integer>\",\n      \"locations\": [\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        },\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        }\n      ],\n      \"path\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"message\": \"<string>\",\n      \"status\": \"<integer>\",\n      \"locations\": [\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        },\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        }\n      ],\n      \"path\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"extensions\": {\n    \"Duis169\": false\n  }\n}",
+              "createdAt": "2026-10-22T01:13:02.000Z",
+              "updatedAt": "2026-10-22T01:13:02.000Z",
+              "uid": "35240-956defb3-ed16-4424-bd89-e3a52041034f"
+            },
+            {
+              "id": "f61af3ec-7c47-4e65-a148-69e434873255",
+              "name": "Malformed GraphQL document",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": {\n    \"Duisd72\": 129272.05485486984,\n    \"ad_1d\": 39640560\n  },\n  \"operationName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://graphql.anilist.co/",
+                  "protocol": "https",
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": \"<object,null>\",\n  \"errors\": [\n    {\n      \"message\": \"<string>\",\n      \"status\": \"<integer>\",\n      \"locations\": [\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        },\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        }\n      ],\n      \"path\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"message\": \"<string>\",\n      \"status\": \"<integer>\",\n      \"locations\": [\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        },\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        }\n      ],\n      \"path\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"extensions\": {\n    \"Duis169\": false\n  }\n}",
+              "createdAt": "2026-10-22T01:13:02.000Z",
+              "updatedAt": "2026-10-22T01:13:02.000Z",
+              "uid": "35240-f61af3ec-7c47-4e65-a148-69e434873255"
+            },
+            {
+              "id": "97c3f999-8f86-4b9b-8a48-0e385a029c24",
+              "name": "Missing or invalid access token for a mutation requiring auth",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": {\n    \"Duisd72\": 129272.05485486984,\n    \"ad_1d\": 39640560\n  },\n  \"operationName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://graphql.anilist.co/",
+                  "protocol": "https",
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": \"<object,null>\",\n  \"errors\": [\n    {\n      \"message\": \"<string>\",\n      \"status\": \"<integer>\",\n      \"locations\": [\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        },\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        }\n      ],\n      \"path\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"message\": \"<string>\",\n      \"status\": \"<integer>\",\n      \"locations\": [\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        },\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        }\n      ],\n      \"path\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"extensions\": {\n    \"Duis169\": false\n  }\n}",
+              "createdAt": "2026-10-22T01:13:02.000Z",
+              "updatedAt": "2026-10-22T01:13:02.000Z",
+              "uid": "35240-97c3f999-8f86-4b9b-8a48-0e385a029c24"
+            },
+            {
+              "id": "b6f6cb73-e9e1-4af1-84d5-af04b7610224",
+              "name": "API temporarily disabled or IP blocked",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": {\n    \"Duisd72\": 129272.05485486984,\n    \"ad_1d\": 39640560\n  },\n  \"operationName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://graphql.anilist.co/",
+                  "protocol": "https",
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": \"<object,null>\",\n  \"errors\": [\n    {\n      \"message\": \"<string>\",\n      \"status\": \"<integer>\",\n      \"locations\": [\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        },\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        }\n      ],\n      \"path\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"message\": \"<string>\",\n      \"status\": \"<integer>\",\n      \"locations\": [\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        },\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        }\n      ],\n      \"path\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"extensions\": {\n    \"Duis169\": false\n  }\n}",
+              "createdAt": "2026-10-22T01:13:02.000Z",
+              "updatedAt": "2026-10-22T01:13:02.000Z",
+              "uid": "35240-b6f6cb73-e9e1-4af1-84d5-af04b7610224"
+            },
+            {
+              "id": "07b4639d-43b3-4c5b-9342-59ddd3ce4f56",
+              "name": "Rate limit exceeded; one-minute timeout applied",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": {\n    \"Duisd72\": 129272.05485486984,\n    \"ad_1d\": 39640560\n  },\n  \"operationName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://graphql.anilist.co/",
+                  "protocol": "https",
+                  "host": [
+                    "graphql",
+                    "anilist",
+                    "co"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Seconds to wait before retrying",
+                    "type": "text/plain"
+                  },
+                  "key": "Retry-After",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "X-RateLimit-Limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "X-RateLimit-Remaining",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Unix timestamp of next allowed request",
+                    "type": "text/plain"
+                  },
+                  "key": "X-RateLimit-Reset",
+                  "value": "<integer>"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": \"<object,null>\",\n  \"errors\": [\n    {\n      \"message\": \"<string>\",\n      \"status\": \"<integer>\",\n      \"locations\": [\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        },\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        }\n      ],\n      \"path\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"message\": \"<string>\",\n      \"status\": \"<integer>\",\n      \"locations\": [\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        },\n        {\n          \"line\": \"<integer>\",\n          \"column\": \"<integer>\"\n        }\n      ],\n      \"path\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"extensions\": {\n    \"Duis169\": false\n  }\n}",
+              "createdAt": "2026-10-22T01:13:02.000Z",
+              "updatedAt": "2026-10-22T01:13:02.000Z",
+              "uid": "35240-07b4639d-43b3-4c5b-9342-59ddd3ce4f56"
+            }
+          ],
+          "createdAt": "2026-10-22T01:13:02.000Z",
+          "updatedAt": "2026-10-22T01:13:02.000Z",
+          "uid": "35240-5d97f9b0-c27e-4bf5-84a0-2e2447a79cb4"
+        }
+      ],
+      "id": "f643dee0-dbe0-427c-a18e-e150d4eebad2",
+      "createdAt": "2026-10-22T01:13:02.000Z",
+      "updatedAt": "2026-10-22T01:13:02.000Z",
+      "uid": "35240-f643dee0-dbe0-427c-a18e-e150d4eebad2"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graphql.anilist.co"
+    }
+  ]
+}
