@@ -1,4 +1,4 @@
-# AniList (anilist)
+# AniList
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,88 +66,226 @@
 
 AniList is an anime and manga database, tracking, and social platform serving over 500,000 anime and manga entries along with character, staff, studio, user, activity, review, recommendation, and forum thread data. The primary developer surface is a free public GraphQL API at https://graphql.anilist.co, with OAuth2 authentication (Authorization Code, Implicit, and Auth Pin flows) for read/write operations against user list and social data.
 
-**APIs.json:** [https://docs.anilist.co/](https://docs.anilist.co/)
+**Areas:** Anime · Manga · Entertainment · Media · Social · Database · GraphQL · Authentication · Public APIs
 
-## Tags
+## AniList on APIs.io
 
-- Anime
-- Manga
-- Entertainment
-- Media
-- Social
-- Database
-- GraphQL
-- OAuth2
-- Public APIs
+Everything profiled for AniList is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/anilist/](https://apis.io/providers/anilist/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (3)
 
-- **Created:** 2026-05-28
-- **Modified:** 2026-05-30
+- [AniList GraphQL API v2](https://apis.io/apis/anilist/anilist-graphql-api-v2/) — The AniList GraphQL API v2 is the primary public developer interface for AniList.co. It exposes anime, manga, character, staff, studio, user, activity,…
+- [AniList O Auth2 API](https://apis.io/apis/anilist/anilist-oauth2-api/) — OAuth2 authorization code and implicit grant endpoints
+- [AniList Graph QL API](https://apis.io/apis/anilist/anilist-graph-ql-api/) — GraphQL query and mutation endpoint
 
-## APIs
+### Published properties
 
-### AniList GraphQL API v2
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The AniList GraphQL API v2 is the primary public developer interface for AniList.co. It exposes anime, manga, character, staff, studio, user, activity, review, recommendation, thread, comment, notification, and airing schedule data through a single endpoint at https://graphql.anilist.co. All requests are POSTs carrying a query and optional variables payload. Mutations require an OAuth2 access token. The schema includes 25+ root Query fields (Page, Media, MediaTrend, AiringSchedule, Character, Staff, MediaList, MediaListCollection, GenreCollection, MediaTagCollection, User, Viewer, Notification, Studio, Review, Activity, ActivityReply, Following, Follower, Thread, ThreadComment, Recommendation, Like, Markdown, AniChartUser, SiteStatistics, ExternalLinkSourceCollection) and 30+ root Mutation fields (UpdateUser, SaveMediaListEntry, UpdateMediaListEntries, DeleteMediaListEntry, DeleteCustomList, SaveTextActivity, SaveMessageActivity, SaveListActivity, DeleteActivity, ToggleActivityPin, ToggleActivitySubscription, SaveActivityReply, DeleteActivityReply, ToggleLike, ToggleLikeV2, ToggleFollow, ToggleFavourite, UpdateFavouriteOrder, SaveReview, DeleteReview, RateReview, SaveRecommendation, SaveThread, DeleteThread, ToggleThreadSubscription, SaveThreadComment, DeleteThreadComment, UpdateAniChartSettings, UpdateAniChartHighlights).
+#### GraphQL (1)
 
-- **Human URL:** [https://docs.anilist.co/](https://docs.anilist.co/)
-- **Base URL:** `https://graphql.anilist.co`
+GraphQL schemas.
 
-#### Tags
+- [AniList GraphQL API](https://apis.io/graphqls/anilist/anilist-graphql/)
 
-- GraphQL
-- Anime
-- Manga
-- Media
-- Social
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.anilist.co/)
-- [Getting Started](https://docs.anilist.co/guide/introduction)
-- [Quickstart](https://docs.anilist.co/guide/graphql/)
-- [API Reference](https://docs.anilist.co/reference/)
-- [Authentication](https://docs.anilist.co/guide/auth/)
-- [Rate Limits](https://docs.anilist.co/guide/rate-limiting)
-- [Sandbox](https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fgraphql.anilist.co)
-- [Console](https://anilist.co/settings/developer)
-- [Errors](https://docs.anilist.co/guide/graphql/errors)
-- [Postman Collection](collections/anilist.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/anilist.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Anilist Agentic Access](https://apis.io/agentic-access/anilist/anilist-agentic-access/)
 
-## Common Properties
+#### JSON Schema (28)
+
+The data models the API reads and writes.
+
+- [AiringSchedule](https://apis.io/schemas/anilist/anilist-airingschedule/)
+- [Character](https://apis.io/schemas/anilist/anilist-character/)
+- [CharacterImage](https://apis.io/schemas/anilist/anilist-characterimage/)
+- [CharacterName](https://apis.io/schemas/anilist/anilist-charactername/)
+- [FuzzyDate](https://apis.io/schemas/anilist/anilist-fuzzydate/)
+- [GraphQLError](https://apis.io/schemas/anilist/anilist-graphqlerror/)
+- [GraphQLRequest](https://apis.io/schemas/anilist/anilist-graphqlrequest/)
+- [GraphQLResponse](https://apis.io/schemas/anilist/anilist-graphqlresponse/)
+- [Media](https://apis.io/schemas/anilist/anilist-media/)
+- [MediaCoverImage](https://apis.io/schemas/anilist/anilist-mediacoverimage/)
+- [MediaList](https://apis.io/schemas/anilist/anilist-medialist/)
+- [MediaListCollection](https://apis.io/schemas/anilist/anilist-medialistcollection/)
+- [MediaTag](https://apis.io/schemas/anilist/anilist-mediatag/)
+- [MediaTitle](https://apis.io/schemas/anilist/anilist-mediatitle/)
+- [PageInfo](https://apis.io/schemas/anilist/anilist-pageinfo/)
+- [Recommendation](https://apis.io/schemas/anilist/anilist-recommendation/)
+- [Review](https://apis.io/schemas/anilist/anilist-review/)
+- [Staff](https://apis.io/schemas/anilist/anilist-staff/)
+- [StaffImage](https://apis.io/schemas/anilist/anilist-staffimage/)
+- [StaffName](https://apis.io/schemas/anilist/anilist-staffname/)
+- [Studio](https://apis.io/schemas/anilist/anilist-studio/)
+- [Thread](https://apis.io/schemas/anilist/anilist-thread/)
+- [ThreadComment](https://apis.io/schemas/anilist/anilist-threadcomment/)
+- [TokenRequest](https://apis.io/schemas/anilist/anilist-tokenrequest/)
+- [TokenResponse](https://apis.io/schemas/anilist/anilist-tokenresponse/)
+- …and 3 more published on APIs.io
+
+#### JSON Structure (28)
+
+Data models expressed in JSON Structure.
+
+- [Anilist Airingschedule Structure](https://apis.io/json-structure/anilist/anilist-airingschedule-structure/)
+- [Anilist Character Structure](https://apis.io/json-structure/anilist/anilist-character-structure/)
+- [Anilist Characterimage Structure](https://apis.io/json-structure/anilist/anilist-characterimage-structure/)
+- [Anilist Charactername Structure](https://apis.io/json-structure/anilist/anilist-charactername-structure/)
+- [Anilist Fuzzydate Structure](https://apis.io/json-structure/anilist/anilist-fuzzydate-structure/)
+- [Anilist Graphqlerror Structure](https://apis.io/json-structure/anilist/anilist-graphqlerror-structure/)
+- [Anilist Graphqlrequest Structure](https://apis.io/json-structure/anilist/anilist-graphqlrequest-structure/)
+- [Anilist Graphqlresponse Structure](https://apis.io/json-structure/anilist/anilist-graphqlresponse-structure/)
+- [Anilist Media Structure](https://apis.io/json-structure/anilist/anilist-media-structure/)
+- [Anilist Mediacoverimage Structure](https://apis.io/json-structure/anilist/anilist-mediacoverimage-structure/)
+- [Anilist Medialist Structure](https://apis.io/json-structure/anilist/anilist-medialist-structure/)
+- [Anilist Medialistcollection Structure](https://apis.io/json-structure/anilist/anilist-medialistcollection-structure/)
+- [Anilist Mediatag Structure](https://apis.io/json-structure/anilist/anilist-mediatag-structure/)
+- [Anilist Mediatitle Structure](https://apis.io/json-structure/anilist/anilist-mediatitle-structure/)
+- [Anilist Pageinfo Structure](https://apis.io/json-structure/anilist/anilist-pageinfo-structure/)
+- [Anilist Recommendation Structure](https://apis.io/json-structure/anilist/anilist-recommendation-structure/)
+- [Anilist Review Structure](https://apis.io/json-structure/anilist/anilist-review-structure/)
+- [Anilist Staff Structure](https://apis.io/json-structure/anilist/anilist-staff-structure/)
+- [Anilist Staffimage Structure](https://apis.io/json-structure/anilist/anilist-staffimage-structure/)
+- [Anilist Staffname Structure](https://apis.io/json-structure/anilist/anilist-staffname-structure/)
+- [Anilist Studio Structure](https://apis.io/json-structure/anilist/anilist-studio-structure/)
+- [Anilist Thread Structure](https://apis.io/json-structure/anilist/anilist-thread-structure/)
+- [Anilist Threadcomment Structure](https://apis.io/json-structure/anilist/anilist-threadcomment-structure/)
+- [Anilist Tokenrequest Structure](https://apis.io/json-structure/anilist/anilist-tokenrequest-structure/)
+- [Anilist Tokenresponse Structure](https://apis.io/json-structure/anilist/anilist-tokenresponse-structure/)
+- …and 3 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Anilist Context](https://apis.io/jsonld/anilist/anilist-context/)
+
+#### Examples (28)
+
+Example requests and responses.
+
+- [Anilist Airingschedule Example](https://apis.io/examples/anilist/anilist-airingschedule-example/)
+- [Anilist Character Example](https://apis.io/examples/anilist/anilist-character-example/)
+- [Anilist Characterimage Example](https://apis.io/examples/anilist/anilist-characterimage-example/)
+- [Anilist Charactername Example](https://apis.io/examples/anilist/anilist-charactername-example/)
+- [Anilist Fuzzydate Example](https://apis.io/examples/anilist/anilist-fuzzydate-example/)
+- [Anilist Graphqlerror Example](https://apis.io/examples/anilist/anilist-graphqlerror-example/)
+- [Anilist Graphqlrequest Example](https://apis.io/examples/anilist/anilist-graphqlrequest-example/)
+- [Anilist Graphqlresponse Example](https://apis.io/examples/anilist/anilist-graphqlresponse-example/)
+- [Anilist Media Example](https://apis.io/examples/anilist/anilist-media-example/)
+- [Anilist Mediacoverimage Example](https://apis.io/examples/anilist/anilist-mediacoverimage-example/)
+- [Anilist Medialist Example](https://apis.io/examples/anilist/anilist-medialist-example/)
+- [Anilist Medialistcollection Example](https://apis.io/examples/anilist/anilist-medialistcollection-example/)
+- [Anilist Mediatag Example](https://apis.io/examples/anilist/anilist-mediatag-example/)
+- [Anilist Mediatitle Example](https://apis.io/examples/anilist/anilist-mediatitle-example/)
+- [Anilist Pageinfo Example](https://apis.io/examples/anilist/anilist-pageinfo-example/)
+- [Anilist Recommendation Example](https://apis.io/examples/anilist/anilist-recommendation-example/)
+- [Anilist Review Example](https://apis.io/examples/anilist/anilist-review-example/)
+- [Anilist Staff Example](https://apis.io/examples/anilist/anilist-staff-example/)
+- [Anilist Staffimage Example](https://apis.io/examples/anilist/anilist-staffimage-example/)
+- [Anilist Staffname Example](https://apis.io/examples/anilist/anilist-staffname-example/)
+- [Anilist Studio Example](https://apis.io/examples/anilist/anilist-studio-example/)
+- [Anilist Thread Example](https://apis.io/examples/anilist/anilist-thread-example/)
+- [Anilist Threadcomment Example](https://apis.io/examples/anilist/anilist-threadcomment-example/)
+- [Anilist Tokenrequest Example](https://apis.io/examples/anilist/anilist-tokenrequest-example/)
+- [Anilist Tokenresponse Example](https://apis.io/examples/anilist/anilist-tokenresponse-example/)
+- …and 3 more published on APIs.io
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [AniList GraphQL API v2](https://apis.io/collections/anilist/open-anilist/)
+- [AniList API v2 GraphQL API](https://apis.io/collections/anilist/open-anilist-graphql-api/)
+- [AniList API v2 GraphQL OAuth2 API](https://apis.io/collections/anilist/open-anilist-oauth2-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [AniList — jsonschema rules](https://apis.io/rules/anilist/anilist-jsonschema-spectral-rules/)
+- [AniList API Rules](https://apis.io/rules/anilist/anilist-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Anilist Authentication](https://apis.io/security/anilist/anilist-authentication/)
+- [Anilist Domain Security](https://apis.io/security/anilist/anilist-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Anilist Scopes](https://apis.io/scopes/anilist/anilist-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://anilist.co/)
 - [Documentation](https://docs.anilist.co/)
-- [API Reference](https://docs.anilist.co/reference/)
-- [Getting Started](https://docs.anilist.co/guide/introduction)
-- [Quickstart](https://docs.anilist.co/guide/graphql/)
-- [Authentication](https://docs.anilist.co/guide/auth/)
-- [Sign Up](https://anilist.co/signup)
-- [Login](https://anilist.co/login)
-- [Developer Portal](https://anilist.co/settings/developer)
-- [Console](https://anilist.co/settings/developer)
-- [Sandbox](https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fgraphql.anilist.co)
+- [Getting started](https://docs.anilist.co/guide/introduction)
+- [API reference](https://docs.anilist.co/reference/)
 - [Pricing](https://docs.anilist.co/guide/terms-of-use#commercial-usage)
-- [Terms of Service](https://docs.anilist.co/guide/terms-of-use)
-- [Privacy Policy](https://anilist.co/terms)
-- [GitHub Organization](https://github.com/AniList)
-- [GitHub Repository](https://github.com/AniList/docs)
-- [Support](mailto:contact@anilist.co)
-- [Contact](mailto:contact@anilist.co)
-- [Blog](https://anistaff.medium.com/)
-- [X (Twitter)](https://x.com/AniListco)
-- [SDK](https://github.com/topics/anilist)
-- [Code Examples](https://github.com/AniList/docs/tree/main/docs/guide/snippets)
-- [Tools](https://github.com/yuna0x0/anilist-mcp)
-- [Public APIs Listing](https://github.com/public-apis/public-apis)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Solutions](undefined)
+- [Blog](https://anilist.co/blog/)
+- [Terms of service](https://docs.anilist.co/guide/terms-of-use)
+- [Privacy policy](https://anilist.co/terms)
+- [GitHub](https://github.com/AniList)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 43.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 28.5 |
+| Contract governance | 13.6 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 71.4 |
+| Access clarity | 38.2 |
+
+**Agent readiness 36.6** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 34.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/anilist/](https://apis.io/providers/anilist/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for AniList: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/anilist/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
